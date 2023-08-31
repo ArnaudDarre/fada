@@ -1,14 +1,28 @@
 {
-  "name": "test-deploy",
-  "version": "0.1.0",
-  "private": true,
+  "name": "shroomio",
+  "description": "React UI component library",
+  "author": "arnymax",
+  "version": "0.2.21",
+  "private": false,
+  "keywords": [
+    "react",
+    "components",
+    "library",
+    "ui"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.2",
+    "eslint": "^8.48.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
+    "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.66.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
