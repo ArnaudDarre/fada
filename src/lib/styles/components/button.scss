@@ -1,30 +1,210 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
+@import './layer.scss';
+
+// —————————————————————————————————————————————————————————————————
+// reset
+// mixins
+// elements
+// color
+// size
+// variant
+// fullWidth
+// disabled
+// isTransparent
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// reset
+// —————————————————————————————————————————————————————————————————
+
+button,
+a {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// —————————————————————————————————————————————————————————————————
+
+@mixin size($size) {
+  border-radius: $size*0.2;
+  font-size: $size*0.5;
+  height: $size;
+
+  .button {
+    border-radius: $size*0.2;
+    padding-right: calc($size / 3);
+    padding-left: calc($size / 3);
+  }
+
+  &.button--icon .button {
+    width: $size;
+    padding: $size*0.25;
+  }
+
+  p {
+    font-size: $size*0.5;
+  }
+
+  &.button--stroke {
+    padding-right: calc(#{calc($size/3)} - $spacing*0.25);
+    padding-left: calc(#{calc($size/3)} - $spacing*0.25);
+    height: calc(#{$size} - $spacing*0.5);
+
+    &.button--icon {
+      width: calc(#{$size} - $spacing*0.5);
+      padding: calc(#{$size*0.25} - $spacing*0.25);
+    }
+  }
+
+  .button__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: $size*0.5;
+      height: $size*0.5;
+    }
+
+    &--left {
+      margin-right: $size*0.25;
+      margin-left: -$size*0.125;
+    }
+
+    &--right {
+      margin-right: -$size*0.125;
+      margin-left: $size*0.25;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+  text-transform: uppercase;
+  font-weight: $font-bold;
+
+  &__wrapper {
+    display: inline-flex;
+    height: auto;
+  }
 }
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+
+// —————————————————————————————————————————————————————————————————
+// color
+// —————————————————————————————————————————————————————————————————
+
+// color is handled with the Layer component
+
+// —————————————————————————————————————————————————————————————————
+// size
+// —————————————————————————————————————————————————————————————————
+
+.button {
+
+  &--xxs {
+    @include size($spacing*2.5);
+
+    &.button--icon .button {
+      padding: $spacing*0.5;
+    }
+  }
+
+  &--xs {
+    @include size($spacing*3);
+
+    &.button--icon .button {
+      padding: $spacing*0.5;
+    }
+  }
+
+  &--sm {
+    @include size($spacing*3.5);
+  }
+
+  &--md {
+    @include size($spacing*4);
+  }
+
+  &--lg {
+    @include size($spacing*4.5);
+  }
+
+  &--xl {
+    @include size($spacing*5);
+  }
 }
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+
+// —————————————————————————————————————————————————————————————————
+// variant
+// —————————————————————————————————————————————————————————————————
+
+.button {
+
+  &--stroke {
+    border-width: $spacing*0.25;
+    border-style: solid;
+    color: $text;
+  }
 }
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+
+// —————————————————————————————————————————————————————————————————
+// fullWidth
+// —————————————————————————————————————————————————————————————————
+
+.button--fullWidth {
+  width: 100%;
 }
-.storybook-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+.button--disabled {
+  opacity: 0.4;
+
+  .button {
+    cursor: not-allowed;
+  }
 }
-.storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+
+// —————————————————————————————————————————————————————————————————
+// isTransparent
+// —————————————————————————————————————————————————————————————————
+
+.button--transparent {
+  background-color: transparent !important;
+  padding: 0;
+  height: auto;
+
+  .button {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

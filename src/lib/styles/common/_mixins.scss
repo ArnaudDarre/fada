@@ -1,0 +1,58 @@
+// —————————————————————————————————————————————————————————————————
+// misc
+// media queries
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// misc
+// —————————————————————————————————————————————————————————————————
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin hover {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// media queries
+// —————————————————————————————————————————————————————————————————
+
+@mixin responsive($value, $breakpoint) {
+  @if $value == up {
+    $value: min-width;
+    @if $breakpoint == desktop { $breakpoint: $desktop-up; } 
+    @else if $breakpoint == laptop { $breakpoint: $laptop-up; } 
+    @else if $breakpoint == tablet { $breakpoint: $tablet-up; } 
+    @else if $breakpoint == mobile { $breakpoint: $mobile-up; } 
+    @else if $breakpoint == mobile-sm { $breakpoint: $mobile-sm-up; }
+
+  } @else if $value == down {
+    $value: max-width;
+    @if $breakpoint == desktop { $breakpoint: $desktop-down; } 
+    @else if $breakpoint == laptop { $breakpoint: $laptop-down; } 
+    @else if $breakpoint == tablet { $breakpoint: $tablet-down; } 
+    @else if $breakpoint == mobile { $breakpoint: $mobile-down; } 
+    @else if $breakpoint == mobile-sm { $breakpoint: $mobile-sm-down; }
+  }
+
+  @media ($value: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin responsive-touch() {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin responsive-mobile-landscape {
+  @media only screen and (max-device-width: $laptop-down) and (orientation: landscape) {
+    @content;
+  }
+}

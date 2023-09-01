@@ -1,49 +1,146 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+import { Layer } from './Layer'
+
+export const Button = ({
+  color,
+  size,
+  kind,
+  variant,
+  component,
+  fullWidth,
+  disabled,
+  iconLeft,
+  iconRight,
+  isTransparent,
+  className,
+  children,
+  ...props
+}) => {
+
+  const Component = component
+
+  let content
+
+  if (kind === 'text') {
+    content = (
+      <>
+        {iconLeft ? (
+          <span className={classnames(
+            'button__icons',
+            'button__icons--left'
+          )}>
+            {iconLeft}
+          </span>
+        ) : null}
+        {children}
+        {iconRight ? (
+          <span className={classnames(
+            'button__icons',
+            'button__icons--right'
+          )}>
+            {iconRight}
+          </span>
+        ) : null}
+      </>
+    )
+  } else if (kind === 'icon') {
+    content = (
+      <>
+        {children}
+      </>
+    )
+  }
+
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
+    <Layer
+      className={classnames([
+        'button__wrapper',
+        {
+          [`button--${size}`]: size,
+          [`button--${kind}`]: kind,
+          [`button--${variant}`]: variant,
+          'button--fullWidth': fullWidth,
+          'button--disabled': disabled,
+          'button--transparent': isTransparent
+        },
+        className
+      ])}
+      fill={variant === 'fill' ? color : null}
+      stroke={variant === 'stroke' ? color : null}
+      hasHover
+      disabled={disabled}
     >
-      {label}
-    </button>
-  );
-};
+      <Component
+        className={classnames([
+          'button',
+          {
+            [`text--${color}`]: isTransparent
+          }
+        ])}
+        disabled={disabled}
+        {...props}
+      >
+        {content}
+      </Component>
+    </Layer>
+  )
+}
 
 Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
-};
+  color: PropTypes.oneOf([
+    'black',
+    'white',
+    'grey-60',
+    'primary',
+    'secondary',
+    'highlight',
+    'success',
+    'info',
+    'warning',
+    'error'
+  ]),
+  size: PropTypes.oneOf([
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl'
+  ]),
+  kind: PropTypes.oneOf([
+    'text',
+    'icon'
+  ]),
+  variant: PropTypes.oneOf([
+    'fill',
+    'stroke'
+  ]),
+  component: PropTypes.oneOf([
+    'button',
+    'a'
+  ]),
+  fullWidth: PropTypes.bool,
+  disabled: PropTypes.bool,
+  iconLeft: PropTypes.node,
+  iconRight: PropTypes.node,
+  isTransparent: PropTypes.bool,
+  className: PropTypes.node,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ])
+}
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
-};
+  color: 'primary',
+  size: 'md',
+  kind: 'text',
+  variant: 'fill',
+  component: 'button',
+  fullWidth: false,
+  disabled: false,
+  isTransparent: false,
+  children: 'Button'
+}

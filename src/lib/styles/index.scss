@@ -1,7 +1,11 @@
+// common
+@import './common/variables';
+@import './common/mixins';
+@import './common/global';
+
 // components
 @import './components/button';
-@import './components/header';
-@import './components/page';
+@import './components/layer';
 
 body {
   margin: 0;

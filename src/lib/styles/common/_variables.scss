@@ -1,0 +1,222 @@
+// —————————————————————————————————————————————————————————————————
+// colors
+// spacing
+// typography
+// breakpoints
+// misc
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// colors
+// —————————————————————————————————————————————————————————————————
+
+// common
+
+$black: #000A1E !default;
+$white: #FFFFFF !default;
+
+// grey gradient
+
+$grey-90: #1A2335 !default;
+$grey-80: #333B4B !default;
+$grey-70: #4D5462 !default;
+$grey-60: #666C78 !default;
+$grey-50: #7F848E !default;
+$grey-40: #999DA5 !default;
+$grey-30: #B2B5BB !default;
+$grey-20: #CCCED2 !default;
+$grey-10: #E5E6E8 !default;
+$grey-5: #F2F3F4 !default;
+
+// text
+
+$text: $white !default;
+$text-alt: rgba($text, 0.66) !default;
+$text-disabled: rgba($text, 0.33) !default;
+$text-contrast: $black !default;
+$text-contrast-alt: rgba($text-contrast, 0.66) !default;
+$text-contrast-disabled: rgba($text-contrast, 0.33) !default;
+
+// brand
+
+$primary-light: #B3FFED !default;
+$primary: #00FFC4 !default;
+$primary-dark: #00DBA9 !default;
+$primary-text-contrast: $text-contrast !default;
+
+$secondary-light: #B1B9D4 !default;
+$secondary: #4D5C8D !default;
+$secondary-dark: #3D4971 !default;
+$secondary-text-contrast: $text !default;
+
+$highlight-light: #F9D7B8 !default;
+$highlight: #F2994A !default;
+$highlight-dark: #EF7910 !default;
+$highlight-text-contrast: $text !default;
+
+// misc
+
+$background: $black !default;
+$paper: $grey-90 !default;
+
+$overlay: rgba($white, 0.1) !default;
+$hover: rgba($white, 0.08) !default;
+$backdrop: rgba($white, 0.2) !default;
+
+$border: rgba($white, 0.2) !default;
+$border-contrast: rgba($black, 0.2) !default;
+
+// feedback
+
+$success-light: #E7F9EE !default;
+$success: #26a95d !default;
+$success-dark: #1C7C44 !default;
+$success-text: #155F34 !default;
+$success-text-contrast: $text !default;
+
+$info-light: #E9F8FD !default;
+$info: #17A0CC !default;
+$info-dark: #117798 !default;
+$info-text: #0D5A72 !default;
+$info-text-contrast: $text !default;
+
+$warning-light: #FFFAE5 !default;
+$warning: #FFDC46 !default;
+$warning-dark: #886E00 !default;
+$warning-text: #685400 !default;
+$warning-text-contrast: $text-contrast !default;
+
+$error-light: #FCE7E7 !default;
+$error: #EB5757 !default;
+$error-dark: #D31919 !default;
+$error-text: #9C1212 !default;
+$error-text-contrast: $text !default;
+
+// social
+
+$facebook:#1877F2;
+$github:#4078C0;
+$instagram: #405DE6;
+$linkedin: #0077B5;
+$medium:#00AB6C;
+$twitter:#1DA1F2;
+
+// export for use in jsx files
+
+:export {
+  black: $black;
+  white: $white;
+
+  grey-90: $grey-90;
+  grey-80: $grey-80;
+  grey-70: $grey-70;
+  grey-60: $grey-60;
+  grey-50: $grey-50;
+  grey-40: $grey-40;
+  grey-30: $grey-30;
+  grey-20: $grey-20;
+  grey-10: $grey-10;
+  grey-5: $grey-5;
+
+  text: $text;
+  text-alt: $text-alt;
+  text-disabled: $text-disabled;
+  text-contrast: $text-contrast;
+  text-contrast-alt: $text-contrast-alt;
+  text-contrast-disabled: $text-contrast-disabled;
+
+  primary: $primary;
+  secondary: $secondary;
+  highlight: $highlight;
+
+  background: $background;
+  paper: $paper;
+  overlay: $overlay;
+  hover: $hover;
+  backdrop: $backdrop;
+  border: $border;
+  border-contrast: $border-contrast;
+
+  success: $success;
+  info: $info;
+  warning: $warning;
+  error: $error;
+}
+
+// —————————————————————————————————————————————————————————————————
+// spacing
+// —————————————————————————————————————————————————————————————————
+
+$spacing: 0.5rem !default; // 8px
+
+$page-gutter: calc(100vw / 12) !default;
+$page-max-width: 1200px !default;
+$page-column: calc(100% / 12) !default;
+
+$section-spacing: $spacing*8 !default;
+$section-spacing-content: $spacing*6 !default;
+
+$navbar-height: $spacing*8 !default;
+
+// —————————————————————————————————————————————————————————————————
+// typography
+// —————————————————————————————————————————————————————————————————
+
+// fonts
+
+$font: "Barlow", "Arial", sans-serif !default;
+
+// weight
+
+$font-light: 300 !default;
+$font-regular: 500 !default;
+$font-bold: 700 !default;
+
+// —————————————————————————————————————————————————————————————————
+// breakpoints
+// —————————————————————————————————————————————————————————————————
+
+$desktop-lg: 1800px !default;
+
+$desktop-up: 1280px !default;
+$desktop-down: 1279.98px !default;
+
+$laptop-up: 1024px !default;
+$laptop-down: 1023.98px !default;
+
+$tablet-up: 768px !default;
+$tablet-down: 767.98px !default;
+
+$mobile-up: 576px !default;
+$mobile-down: 575.98px !default;
+
+$mobile-sm-up: 375px !default;
+$mobile-sm-down: 374.98px !default;
+
+// —————————————————————————————————————————————————————————————————
+// misc
+// —————————————————————————————————————————————————————————————————
+
+// transition
+
+$transition-md: 0.4s ease 0s !default;
+$transition-lg: 0.8s ease 0s !default;
+
+// shadow
+
+$box-shadow-sm: 0 0 $spacing $spacing*0.25 rgba($secondary ,0.2) !default;
+$box-shadow-md: 0 0 $spacing*2 $spacing*0.5 rgba($secondary ,0.2) !default;
+$box-shadow-lg: 0 0 $spacing*4 $spacing rgba($secondary ,0.2) !default;
+
+// border
+
+$border-sm: 1px solid !default;
+$border-md: $spacing*0.25 solid !default;
+$border-lg: $spacing*0.5 solid !default;
+
+// border-radius
+
+$border-radius-sm: $spacing*0.75 !default;
+$border-radius-md: $spacing !default;
+$border-radius-lg: $spacing*2 !default;
+
