@@ -3,6 +3,10 @@
 @import './common/mixins';
 @import './common/global';
 
+// common
+@import './mixins/layer';
+@import './mixins/text';
+
 // components
 @import './components/accordion';
 @import './components/alert';
@@ -16,7 +20,22 @@
 @import './components/divider';
 @import './components/form-field';
 @import './components/grid';
-@import './components/layer';
+@import './components/link';
+@import './components/loader';
+@import './components/modal';
+@import './components/navbar';
+@import './components/nav-group';
+@import './components/nav-item';
+@import './components/page';
+@import './components/radio';
+@import './components/section';
+@import './components/snippet';
+@import './components/stepper';
+@import './components/switch';
+@import './components/table';
+@import './components/tabs';
+@import './components/tag';
+@import './components/tooltip';
 
 body {
   margin: 0;
