@@ -1,0 +1,181 @@
+// —————————————————————————————————————————————————————————————————
+// mixins
+// elements
+// size
+// noPadding
+// transparent
+// gutter
+// active
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// —————————————————————————————————————————————————————————————————
+
+@mixin size($proportion, $size) {
+
+  .accordion {
+
+    &__item {
+      border-radius: calc($size*2/3);
+
+      &:not(:last-child) {
+        margin-bottom: calc($size/3);
+      }
+
+      &--active {
+        padding-bottom: $size;
+      }
+    }
+
+    &__control {
+      padding: $size $size*1.5;
+    }
+
+    &__icon {
+      @if $proportion == lg { height: $size*1.5; width: $size*1.5; }
+      @else { height: $size*2; width: $size*2; }
+
+      &:first-child { margin-right: calc($size); }
+      &:last-child { margin-left: calc($size); }
+    }
+    
+    &__header {
+
+      @if $proportion == sm { margin-bottom: -1px; }
+      @if $proportion == lg { margin: -1px 0 -2px 0; }
+    }
+
+    &__content {
+      transition: height $transition-md;
+      will-change: height;
+      padding: 0 $size*1.5;
+      overflow: hidden;
+    }
+  }
+
+  &.accordion--gutter .accordion__item--active {
+    padding-bottom: $size*2;
+
+    .accordion__control {
+      padding-top: $size*2;
+      padding-bottom: $size*2;
+    }
+  }
+
+  &.accordion--transparent .accordion__item--active {
+    margin-top: calc($size/3);
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.accordion {
+  width: 100%;
+
+  &__item {
+    background-color: $paper;
+    width: 100%;
+  }
+
+  &__control,
+  &__content {
+    transition: padding $transition-md;
+    will-change: paddding;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__header {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.125rem;
+    width: 1.125rem;
+
+    &:first-child { margin-right: 0.5rem; }
+    &:last-child { margin-left: 0.5rem; }
+
+    &--arrow {
+      transition: transform $transition-md;
+      will-change: transform;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// size
+// —————————————————————————————————————————————————————————————————
+
+.accordion {
+
+  &--sm { @include size(sm, $spacing*0.75); }
+  &--md { @include size(md, $spacing); }
+  &--lg { @include size(lg, $spacing*1.5); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// transparent
+// —————————————————————————————————————————————————————————————————
+
+.accordion--transparent {
+
+  .accordion__item {
+    transition: background-color $transition-md, margin $transition-md;
+    will-change: background-color, margin;
+    background-color: transparent;
+
+    @include hover { background-color: $paper; }
+    &--active { background-color: $paper; }
+    &--disabled { @include hover { background-color: transparent; }}
+    
+    &:not(:last-child):not(.accordion__item--active) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// gutter
+// —————————————————————————————————————————————————————————————————
+
+// see size mixin
+
+// —————————————————————————————————————————————————————————————————
+// active
+// —————————————————————————————————————————————————————————————————
+
+.accordion__item--active {
+
+  .accordion {
+
+    &__icon--arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+.accordion__item--disabled {
+  opacity: 0.5;
+
+  .accordion__control {
+    cursor: not-allowed;
+  }
+}
