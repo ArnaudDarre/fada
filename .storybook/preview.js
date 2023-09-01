@@ -1,6 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
 import theme from './theme'
 import './style.scss'
+import '../src/lib/styles/index.scss'
 
 const preview = {
   parameters: {
