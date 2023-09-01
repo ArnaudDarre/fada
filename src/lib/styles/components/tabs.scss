@@ -1,0 +1,102 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// isActive
+// dense
+// direction
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.tabs__control {
+  display: flex;
+  background-color: $paper;
+  gap: $spacing*0.75;
+  border-radius: $spacing*1.5;
+  width: 100%;
+  padding: $spacing*1.5;
+}
+
+.tabs__item {
+  @extend .button;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  padding: $spacing*1.5 $spacing*2;
+  border-radius: $spacing*0.5;
+
+  & + & {
+    margin-top: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// isActive
+// —————————————————————————————————————————————————————————————————
+
+.tabs__item:hover,
+.tabs__item--isActive {
+  background-color: $hover;
+}
+
+.tabs__item--isActive {
+  color: $primary;
+
+  &:after {
+    background-color: $primary;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.tabs__control--dense {
+  border-radius: $spacing;
+  padding: $spacing;
+  gap: $spacing*0.5;
+
+  .tabs__item {
+    padding: $spacing*0.75 $spacing;
+    border-radius: $spacing*0.25;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.tabs__control--landscape {
+
+  .tabs__item {
+
+    &:after {
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+    }
+  }
+}
+
+.tabs__control--portrait {
+  flex-direction: column;
+  width: 200px;
+
+  .tabs__item {
+    text-align: left;
+
+    &:after {
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 2px;
+    }
+  }
+}

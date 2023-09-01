@@ -1,0 +1,72 @@
+// —————————————————————————————————————————————————————————————————
+// mixins
+// elements
+// size
+// direction
+// transparent
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// —————————————————————————————————————————————————————————————————
+
+@mixin size($proportion, $size) {
+  padding: $size;
+  border-radius: $size*1.5;
+
+  &.navGroup--portrait .navItem + .navItem { margin-top: calc($size/4); }
+  &.navGroup--landscape .navItem + .navItem { margin-left: calc($size/4); }
+  &.navItem__dropdown { left: -$size; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.navGroup {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  box-shadow: $box-shadow-md;
+  background-color: $paper;
+}
+
+// —————————————————————————————————————————————————————————————————
+// size
+// —————————————————————————————————————————————————————————————————
+
+.navGroup {
+
+  &--sm { @include size(sm, $spacing); }
+  &--md { @include size(md, $spacing*1.5); }
+  &--lg { @include size(lg, $spacing*2); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.navGroup {
+
+  &--portrait {
+    flex-direction: column;
+
+    .navItem__trigger {
+      width: 100%;
+    }  
+  }  
+
+  &--landscape {
+    flex-direction: row;
+  }  
+}  
+
+// —————————————————————————————————————————————————————————————————
+// transparent
+// —————————————————————————————————————————————————————————————————
+
+.navGroup--transparent {
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+}

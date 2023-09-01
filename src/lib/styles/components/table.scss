@@ -1,0 +1,167 @@
+// —————————————————————————————————————————————————————————————————
+// variables
+// elements
+// align
+// dense
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// variables
+// —————————————————————————————————————————————————————————————————
+
+$padding-vertical: $spacing;
+$padding-horizontal: $spacing*1.25;
+$padding-dense-vertical: $spacing*0.5;
+$padding-dense-horizontal: $spacing*0.75;
+
+$border: 1px solid $border;
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: $border;
+  border-radius: $spacing;
+  overflow: hidden;
+
+  &__content {
+    width: 100%;
+  }
+
+  &__row {
+
+    &:nth-child(even) {
+      background-color: rgba($white, 0.05);
+    }
+  }
+  
+  &__cell {
+    padding: $padding-vertical $padding-horizontal;
+    border-top: $border;
+    
+    &:not(:first-child) {
+      border-left: $border;
+    }
+    
+    &--th {
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: $white;
+      border-top: none;
+      background-color: $overlay;
+      padding-top: $spacing*0.75;
+      padding-bottom: $spacing*0.75;
+    }
+  }
+ 
+  &Footer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $overlay;
+    padding: 0 $padding-vertical;
+    height: $spacing*5.5;
+    border-top: $border;
+  
+    &__pages {
+      display: inline-flex;
+      align-items: center;
+    }
+  
+    &__rows {
+      flex-shrink: 0;
+    }
+  
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: $spacing*3.5;
+      height: $spacing*3.5;
+      border-radius: $border-radius-sm;
+  
+      &:not(:last-child) {
+        margin-right: $spacing*0.5;
+      }
+  
+      &--active {
+        background-color: $primary;
+        color: $primary-text-contrast;
+      }
+    }
+  
+    &__first,
+    &__prev,
+    &__page,
+    &__next,
+    &__last {
+  
+      @include hover {
+  
+        &:not(.tableFooter__button--active) {
+          background-color: $hover;
+        }
+      }
+    }
+  
+    &__dots {
+      width: 1rem;
+    }
+  }
+}
+
+tbody tr:first-child .table__cell--td {
+  border-top: $border;
+}
+
+
+// —————————————————————————————————————————————————————————————————
+// align
+// —————————————————————————————————————————————————————————————————
+
+.table__cell {
+
+  &--left { text-align: left; }
+  &--center { text-align: center; }
+  &--right { text-align: right; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// dense
+// —————————————————————————————————————————————————————————————————
+
+.table__cell--dense {
+  padding: $padding-dense-vertical $padding-dense-horizontal;
+  font-size: 0.875rem;
+
+  &.table__cell--th {
+    padding-top: $spacing*0.25;
+    padding-bottom: $spacing*0.25;
+    font-size: 0.7rem;
+  }
+}
+
+.tableFooter--dense {
+  padding: 0 $padding-dense-vertical;
+  height: $spacing*4.5;
+
+  .tableFooter__button {
+    width: $spacing*3;
+    height: $spacing*3;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// noBorder
+// —————————————————————————————————————————————————————————————————
+
+.table--noBorder {
+  border: 0;
+  border-radius: 0;
+}

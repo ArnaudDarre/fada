@@ -1,0 +1,169 @@
+@import './Layer.scss';
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// elements
+// align
+// fullWidth
+// subheader
+// margin
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// —————————————————————————————————————————————————————————————————
+
+@mixin fill($title-color: $primary) {
+
+  & + & {
+    padding-top: 0;
+  }
+
+  .section__title {
+    color: $title-color;
+  }
+}
+
+@mixin align($align, $flex-align) {
+  text-align: $align;
+  align-items: $flex-align;
+  
+  .section__header {
+    align-items: $flex-align;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: $section-spacing calc(100% / 12);
+
+  & + & {
+    padding-top: 0;
+  }
+
+  &.section--fill {
+    padding-top: $section-spacing;
+    padding-bottom: $section-spacing;
+
+    + .section {
+      padding-top: $section-spacing;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    box-sizing: content-box;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    & + &,
+    & + .section__content {
+      margin-top: $section-spacing-content;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  
+    & + .section__header {
+      margin-top: $section-spacing-content;
+    }
+  }
+
+  &__label {
+
+    & + .section__title {
+      margin-top: $spacing*2;
+    }
+  }
+
+  &__title {
+
+    +.section__subtitle {
+      margin-top: $spacing*3;
+    }
+  }
+
+  &__subtitle {
+    max-width: $page-max-width*0.5;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// fill
+// —————————————————————————————————————————————————————————————————
+
+// fill color is partially handled with the Layer component
+
+.section--fill.fill {
+
+  &--black { @include fill(); }
+  &--white { @include fill($text-contrast); }
+  &--background { @include fill(); }
+  &--paper { @include fill(); }
+  &--overlay { @include fill(); }
+  &--primary { @include fill($primary-text-contrast); }
+  &--secondary { @include fill($secondary-text-contrast); }
+  &--highlight { @include fill($highlight-text-contrast); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// align
+// —————————————————————————————————————————————————————————————————
+
+.section__container {
+
+  &.section--left { @include align(left, flex-start); }
+  &.section--center { @include align(center, center); }
+  &.section--right { @include align(right, flex-end); }
+}
+
+// —————————————————————————————————————————————————————————————————
+// fullWidth
+// —————————————————————————————————————————————————————————————————
+
+.section--fullWidth {
+
+  &.section {
+    padding-right: $spacing*4;
+    padding-left: $spacing*4;
+  }
+
+  &.section__container {
+    max-width: unset;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// subheader
+// —————————————————————————————————————————————————————————————————
+
+.section__header--subheader {
+
+  &.section__header--margin {
+    margin-bottom: $spacing*4;
+  }
+
+  .section {
+
+    &__label + .section__title { margin-top: $spacing*1.5; }
+    &__title + .section__subtitle { margin-top: $spacing*2; }
+  }
+}

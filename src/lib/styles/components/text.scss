@@ -1,0 +1,150 @@
+// —————————————————————————————————————————————————————————————————
+// reset
+// mixins
+// elements
+// variant
+// align
+// weight
+// transform
+// misc
+// color
+// gutter
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// reset
+// —————————————————————————————————————————————————————————————————
+
+html, body,
+h1, h2, h3, h4, h5, h6, p,
+input, select, textarea {
+  font-family: $font;
+}
+
+html, body,
+input, select, textarea {
+  font-size: $spacing*2;
+  font-weight: $font-regular;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, p,
+input, select, textarea {
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}  
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// —————————————————————————————————————————————————————————————————
+
+@mixin font-size($fontSize: 1, $fontWeight: 500, $lineHeight: 1.5) {
+  font-size: $fontSize * $spacing*2;
+  font-weight: $fontWeight;
+  letter-spacing: calc(#{$fontSize * $spacing*2} * 0.01);
+  line-height: $lineHeight;
+
+  & + & {
+    margin-top: 0.75em;
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.paragraph .text + .text {
+  margin-top: 0.75em;
+}
+
+// —————————————————————————————————————————————————————————————————
+// variant
+// —————————————————————————————————————————————————————————————————
+
+.h1, %h1 { @include font-size(3.5, bold, 1.25); }
+.h2, %h2 { @include font-size(2.5, bold, 1.25); }
+.h3, %h3 { @include font-size(2, bold, 1.25); }
+.h4, %h4 { @include font-size(1.75, bold, 1.25); }
+.h5, %h5 { @include font-size(1.5, bold, 1.25); }
+.h6, %h6 { @include font-size(1.25, bold, 1.25); }
+
+.subtitle, %subtitle { @include font-size(1.125); letter-spacing: 0; }
+.body, %body { @include font-size(); letter-spacing: 0; }
+.caption, %caption { @include font-size(0.875); letter-spacing: 0; }
+.overline, %overline { @include font-size(0.75); letter-spacing: 0; }
+
+// —————————————————————————————————————————————————————————————————
+// align
+// —————————————————————————————————————————————————————————————————
+
+.text--left { text-align: left; }
+.text--center { text-align: center; }
+.text--right { text-align: right; }
+.text--justify { text-align: justify; }
+
+// —————————————————————————————————————————————————————————————————
+// weight
+// —————————————————————————————————————————————————————————————————
+
+.text--light { font-weight: 300; }
+.text--regular { font-weight: 500; }
+.text--bold { font-weight: 700; }
+
+// —————————————————————————————————————————————————————————————————
+// transform
+// —————————————————————————————————————————————————————————————————
+
+.text--none { text-transform: none; }
+.text--capitalize { text-transform: capitalize; }
+.text--uppercase { text-transform: uppercase; }
+.text--lowercase { text-transform: lowercase; }
+.text--initial { text-transform: initial; }
+.text--inherit { text-transform: inherit; }
+
+// —————————————————————————————————————————————————————————————————
+// misc
+// —————————————————————————————————————————————————————————————————
+
+.text--underline { text-decoration: underline; }
+.text--italic { font-style: italic; }
+.text--code {
+  font-family: "Roboto Mono", Courier, monospace;
+  font-weight: $font-regular;
+  background-color: $overlay;
+  border-radius: 0.25em;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+}
+
+// —————————————————————————————————————————————————————————————————
+// color
+// —————————————————————————————————————————————————————————————————
+
+.text {
+
+  &--default { color: $text; }
+  &--alt { color: $text-alt; }
+  &--disabled { color: $text-disabled; }
+  
+  &--contrast { color: $text-contrast; }
+  &--contrast-alt { color: $text-contrast-alt; }
+  &--contrast-disabled { color: $text-contrast-disabled; }
+
+  &--primary { color: $primary; }
+  &--secondary { color: $secondary; }
+  &--highlight { color: $highlight; }
+
+  &--success { color: $success; }
+  &--info { color: $info; }
+  &--warning { color: $warning; }
+  &--error { color: $error; }
+}
+
+// —————————————————————————————————————————————————————————————————
+// gutter
+// —————————————————————————————————————————————————————————————————
+
+.text--gutter {
+  margin-bottom: 0.75em;
+}

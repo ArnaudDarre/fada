@@ -1,0 +1,58 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.radio {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+    &:checked + .radio__label:before {
+      border-color: $primary;
+      border-width: $spacing*0.75;
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    &:before {
+      content: "";
+      box-sizing: border-box;
+      display: inline-block;
+      width: $spacing*2;
+      height: $spacing*2;
+      left: 0;
+      top: 0;
+      margin-right: $spacing;
+      border-radius: $spacing*2;
+      border: $spacing*0.25 solid $grey-20;
+    }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+.radio--disabled {
+  opacity: 0.4;
+
+  * { 
+    cursor: not-allowed;
+  }
+}

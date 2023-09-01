@@ -1,0 +1,71 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.switch {
+  display: flex;
+  align-items: center;
+  height: $spacing*3;
+
+  &__input {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    
+    &:checked + .switch__switch {
+      background-color: $primary-light;
+      
+      .switch__toggle {
+        @include calc(left, '100% -'($spacing*2));
+        background-color: $primary;
+      }
+    }
+  }
+
+  &__label {
+    
+    &:first-child { margin-right: $spacing*1.5; }
+    &:last-child { margin-left: $spacing*1.5; }
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: $spacing*4;
+    height: $spacing*2;
+    background: $grey-10;
+    border-radius: $spacing*3;
+    position: relative;
+    
+    &:nth-child(2) { margin-left: $spacing*0.25; }
+  }
+
+  &__toggle {
+    position: absolute;
+    left: -$spacing*0.25;
+    width: $spacing*2.5;
+    height: $spacing*2.5;
+    border-radius: $spacing*2.5;
+    background: $grey-20;
+  }
+}
+  
+// —————————————————————————————————————————————————————————————————
+// disabled
+// —————————————————————————————————————————————————————————————————
+
+.switch--disabled {
+  opacity: 0.4;
+
+  * { 
+    cursor: not-allowed;
+  }
+}
