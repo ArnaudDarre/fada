@@ -1,6 +1,8 @@
+import React from 'react'
+
 import { Coffee, Moon, Sun } from 'react-feather'
 
-import { Button } from '../lib/components/Button';
+import { Button } from '../lib/components/Button'
 import { Card } from '../lib/components/Card'
 import { CardContent } from '../lib/components/CardContent'
 import { CardHeader } from '../lib/components/CardHeader'
