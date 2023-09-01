@@ -1,0 +1,37 @@
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.breadcrumbs {
+  display: inline-flex;
+  align-items: baseline;
+
+  @include responsive(down, tablet) {
+    flex-direction: column;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: $spacing*0.75;
+
+      &.caption {
+        margin-top: 0;
+      }
+    }
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__separator {
+    transform: translateY(0.2em);
+    margin-right: $spacing*0.75;
+  }
+}

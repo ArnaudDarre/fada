@@ -1,0 +1,56 @@
+// —————————————————————————————————————————————————————————————————
+// mixins
+// elements
+// direction
+// spacing
+// —————————————————————————————————————————————————————————————————
+
+// —————————————————————————————————————————————————————————————————
+// mixins
+// —————————————————————————————————————————————————————————————————
+
+@mixin spacing($proportion, $size) {
+  margin: -$size;
+
+  @if $proportion == sm {
+    @include responsive(down, tablet) { margin: -$spacing*0.5; }
+  }
+  @include responsive(down, mobile) { margin: -$spacing; }
+
+  > * {
+    margin: $size;
+
+    @if $proportion == sm {
+      @include responsive(down, tablet) { margin: $spacing*0.5; }
+    }
+    @include responsive(down, mobile) { margin: $spacing; }
+  }
+}
+
+// —————————————————————————————————————————————————————————————————
+// elements
+// —————————————————————————————————————————————————————————————————
+
+.buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+// —————————————————————————————————————————————————————————————————
+// direction
+// —————————————————————————————————————————————————————————————————
+
+.buttons--portrait {
+  flex-direction: column;
+}
+
+// —————————————————————————————————————————————————————————————————
+// spacing
+// —————————————————————————————————————————————————————————————————
+
+.buttons {
+
+  &--sm { @include spacing(sm, $spacing*0.25); }
+  &--md { @include spacing(md, $spacing*0.5); }
+  &--lg { @include spacing(lg, $spacing); }
+}
