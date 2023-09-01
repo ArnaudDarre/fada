@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Header } from './Header';
+import '../styles/components/page.scss';
 
 export const Page = () => {
   const [user, setUser] = React.useState();
