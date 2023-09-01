@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Coffee, Moon, Sun } from 'react-feather'
 
 import { Button } from '../lib/components/Button'
