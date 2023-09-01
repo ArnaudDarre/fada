@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
 import { Layer } from './Layer'
+import { Colors, SizeFull } from '../types'
 
 export const Button = ({
   color,
@@ -90,25 +91,8 @@ export const Button = ({
 }
 
 Button.propTypes = {
-  color: PropTypes.oneOf([
-    'black',
-    'white',
-    'grey-60',
-    'primary',
-    'secondary',
-    'highlight',
-    'success',
-    'info',
-    'warning',
-    'error'
-  ]),
-  size: PropTypes.oneOf([
-    'xs',
-    'sm',
-    'md',
-    'lg',
-    'xl'
-  ]),
+  color: PropTypes.oneOf(Colors),
+  size: PropTypes.oneOf(SizeFull),
   kind: PropTypes.oneOf([
     'text',
     'icon'
