@@ -39,20 +39,20 @@ $text-contrast-disabled: rgba($text-contrast, 0.33) !default;
 
 // brand
 
-$primary-light: #B3FFED !default;
-$primary: #00FFC4 !default;
-$primary-dark: #00DBA9 !default;
+$primary: #00F3FF !default;
+$primary-light: mix($white, $primary, 70%) !default;
+$primary-dark: mix($black, $primary, 50%) !default;
 $primary-text-contrast: $text-contrast !default;
 
-$secondary-light: #B1B9D4 !default;
-$secondary: #4D5C8D !default;
-$secondary-dark: #3D4971 !default;
-$secondary-text-contrast: $text !default;
+$secondary: #E7FC00 !default;
+$secondary-light: mix($white, $secondary, 70%) !default;
+$secondary-dark: mix($black, $secondary, 50%) !default;
+$secondary-text-contrast: $text-contrast !default;
 
-$highlight-light: #F9D7B8 !default;
-$highlight: #F2994A !default;
-$highlight-dark: #EF7910 !default;
-$highlight-text-contrast: $text !default;
+$highlight: #FF74E6 !default;
+$highlight-light: mix($white, $highlight, 70%) !default;
+$highlight-dark: mix($black, $highlight, 50%) !default;
+$highlight-text-contrast: $text-contrast !default;
 
 // misc
 

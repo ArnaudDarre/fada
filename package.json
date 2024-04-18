@@ -1,7 +1,9 @@
 {
   "name": "shroomio",
   "description": "React UI component library",
-  "author": "arnymax",
+  "author": {
+    "name": "arnymax"
+  },
   "version": "0.2.24",
   "private": false,
   "keywords": [
@@ -18,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArnaudDarre/shroomio"
+    "url": "git+https://github.com/ArnaudDarre/shroomio.git"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -42,7 +44,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_097de73cf034c4a"
   },
   "eslintConfig": {
     "extends": [
@@ -66,8 +69,8 @@
   "devDependencies": {
     "@babel/cli": "^7.22.10",
     "@babel/core": "^7.22.11",
-    "@babel/preset-env": "^7.22.14",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.22.14",
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",
     "@storybook/addon-links": "^7.4.0",
@@ -77,9 +80,14 @@
     "@storybook/react-webpack5": "^7.4.0",
     "@storybook/testing-library": "^0.2.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "chromatic": "^11.3.0",
     "eslint-plugin-storybook": "^0.6.13",
     "prop-types": "^15.8.1",
     "storybook": "^7.4.0",
     "webpack": "^5.88.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ArnaudDarre/shroomio/issues"
+  },
+  "homepage": "https://github.com/ArnaudDarre/shroomio#readme"
 }
