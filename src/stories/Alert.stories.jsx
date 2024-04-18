@@ -31,6 +31,13 @@ Playground.args = {
 
 export const Guide = Template.bind({})
 
+Guide.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/bEeQ97jqZFWepD0x4oU5k7/Pallote?type=design&node-id=509%3A487&mode=design&t=bu8Veqiz0jYSbSHi-1'
+  }
+}
+
 Guide.decorators = [
   () => {
 
