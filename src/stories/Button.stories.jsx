@@ -20,6 +20,10 @@ export default {
       description: {
         component: 'Component for every call-to-action.'
       }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/bEeQ97jqZFWepD0x4oU5k7/Pallote?type=design&node-id=509%3A521&mode=design&t=pkiurd7JUEb1noxg-1'
     }
   },
   argTypes: {
