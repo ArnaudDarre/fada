@@ -86,9 +86,5 @@
     "prop-types": "^15.8.1",
     "storybook": "^7.4.0",
     "webpack": "^5.88.2"
-  },
-  "bugs": {
-    "url": "https://github.com/ArnaudDarre/shroomio/issues"
-  },
-  "homepage": "https://github.com/ArnaudDarre/shroomio#readme"
+  }
 }
