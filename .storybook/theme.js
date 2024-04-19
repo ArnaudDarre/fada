@@ -26,7 +26,7 @@ export default create({
   inputTextColor: '#FFFFFF',
   inputBorderRadius: 8,
 
-  brandTitle: 'Shroomio',
+  brandTitle: 'Pallote',
   brandUrl: '',
   brandImage: ''
 })

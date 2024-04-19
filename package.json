@@ -1,5 +1,5 @@
 {
-  "name": "shroomio",
+  "name": "pallote-react",
   "description": "React UI component library",
   "author": {
     "name": "arnymax"
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArnaudDarre/shroomio.git"
+    "url": "git+https://github.com/ArnaudDarre/pallote-react.git"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
