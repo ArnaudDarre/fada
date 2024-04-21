@@ -11,7 +11,7 @@ import { Text } from '../lib/components/Text'
 import { SizeFull } from '../lib/types'
 
 export default {
-  title: 'Components/Layout/CardMedia',
+  title: 'Components/CardMedia',
   component: CardMedia,
   tags: ['autodocs'],
   parameters: {

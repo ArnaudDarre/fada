@@ -3,7 +3,7 @@ import React from 'react'
 import { Page } from '../lib/components/Page'
 
 export default {
-  title: 'Components/Layout/Page',
+  title: 'Components/Page',
   component: Page,
   tags: ['autodocs'],
   parameters: {

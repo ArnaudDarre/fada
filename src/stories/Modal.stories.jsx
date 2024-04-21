@@ -14,7 +14,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Interactions/Modal',
+  title: 'Components/Modal',
   component: Modal,
   tags: ['autodocs'],
   parameters: {

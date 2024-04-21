@@ -10,7 +10,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Layout/CardHeader',
+  title: 'Components/CardHeader',
   component: CardHeader,
   tags: ['autodocs'],
   parameters: {

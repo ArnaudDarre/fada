@@ -5,7 +5,7 @@ import { TableHead } from '../lib/components/TableHead'
 import { TableRow } from '../lib/components/TableRow'
 
 export default {
-  title: 'Components/Data/TableHead',
+  title: 'Components/TableHead',
   component: TableHead,
   tags: ['autodocs'],
   parameters: {

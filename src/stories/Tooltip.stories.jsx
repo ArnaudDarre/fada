@@ -10,7 +10,7 @@ import { Text } from '../lib/components/Text'
 import { Tooltip } from '../lib/components/Tooltip'
 
 export default {
-  title: 'Components/Interactions/Tooltip',
+  title: 'Components/Tooltip',
   component: Tooltip,
   tags: ['autodocs'],
   parameters: {

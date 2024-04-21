@@ -10,7 +10,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Interactions/🚧 Accordion',
+  title: 'Components/🚧 Accordion',
   component: Accordion,
   tags: ['autodocs'],
   parameters: {

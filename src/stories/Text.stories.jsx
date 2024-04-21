@@ -16,7 +16,7 @@ import {
 } from '../lib/types'
 
 export default {
-  title: 'Components/Mixins/Text',
+  title: 'Utilities/Text',
   component: Text,
   tags: ['autodocs'],
   parameters: {

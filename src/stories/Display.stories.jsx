@@ -9,7 +9,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Utils/Display',
+  title: 'Components/Display',
   component: Display,
   tags: ['autodocs'],
   parameters: {

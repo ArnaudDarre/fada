@@ -12,7 +12,7 @@ import { Text } from '../lib/components/Text'
 import { Size } from '../lib/types'
 
 export default {
-  title: 'Components/Interactions/Buttons',
+  title: 'Components/Buttons',
   component: Buttons,
   tags: ['autodocs'],
   parameters: {

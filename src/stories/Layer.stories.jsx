@@ -11,7 +11,7 @@ import { Text } from '../lib/components/Text'
 import { ColorsFull } from '../lib/types'
 
 export default {
-  title: 'Components/Mixins/Layer',
+  title: 'Utilities/Layer',
   component: Layer,
   tags: ['autodocs'],
   parameters: {

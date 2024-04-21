@@ -10,7 +10,7 @@ import { Stepper } from '../lib/components/Stepper'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Interactions/🚧 Stepper',
+  title: 'Components/🚧 Stepper',
   component: Stepper,
   tags: ['autodocs'],
   parameters: {

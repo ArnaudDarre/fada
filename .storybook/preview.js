@@ -19,16 +19,9 @@ const preview = {
       storySort: {
         order: [
           'Intro',
-          'Design system',
-          'Components', [
-            'Utils',
-            'Mixins',
-            'Layout',
-            'Navigation',
-            'Data',
-            'Form',
-            'Interactions'
-          ]
+          'Styles',
+          'Utilities',
+          'Components',
         ],
       }
     }

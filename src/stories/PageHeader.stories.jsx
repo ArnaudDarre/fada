@@ -11,7 +11,7 @@ import { Text } from '../lib/components/Text'
 import { Align } from '../lib/types'
 
 export default {
-  title: 'Components/Layout/PageHeader',
+  title: 'Components/PageHeader',
   component: PageHeader,
   tags: ['autodocs'],
   parameters: {

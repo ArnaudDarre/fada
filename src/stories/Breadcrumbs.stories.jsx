@@ -3,7 +3,7 @@ import React from 'react'
 import { Breadcrumbs } from '../lib/components/Breadcrumbs'
 
 export default {
-  title: 'Components/Navigation/Breadcrumbs',
+  title: 'Components/Breadcrumbs',
   component: Breadcrumbs,
   tags: ['autodocs'],
   parameters: {

@@ -17,7 +17,7 @@ import {
 } from '../lib/types'
 
 export default {
-  title: 'Components/Mixins/Paragraph',
+  title: 'Utilities/Paragraph',
   component: Paragraph,
   tags: ['autodocs'],
   parameters: {

@@ -4,7 +4,7 @@ import { Card } from '../lib/components/Card'
 import { ModalHeader } from '../lib/components/ModalHeader'
 
 export default {
-  title: 'Components/Interactions/ModalHeader',
+  title: 'Components/ModalHeader',
   component: ModalHeader,
   tags: ['autodocs'],
   parameters: {

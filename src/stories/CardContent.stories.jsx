@@ -9,7 +9,7 @@ import { Text } from '../lib/components/Text'
 import { Snippet } from '../lib/components/Snippet'
 
 export default {
-  title: 'Components/Layout/CardContent',
+  title: 'Components/CardContent',
   component: CardContent,
   tags: ['autodocs'],
   parameters: {

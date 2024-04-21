@@ -12,7 +12,7 @@ import { TableRow } from '../lib/components/TableRow'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Data/TableCell',
+  title: 'Components/TableCell',
   component: TableCell,
   tags: ['autodocs'],
   parameters: {

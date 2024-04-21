@@ -10,7 +10,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Forms/SelectOption',
+  title: 'Components/SelectOption',
   component: SelectOption,
   tags: ['autodocs'],
   parameters: {

@@ -8,7 +8,7 @@ import { NavGroup } from '../lib/components/NavGroup'
 import { NavItem } from '../lib/components/NavItem'
 
 export default {
-  title: 'Components/Navigation/NavBar',
+  title: 'Components/NavBar',
   component: NavBar,
   tags: ['autodocs'],
   parameters: {

@@ -10,7 +10,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Data/Detail',
+  title: 'Components/Detail',
   component: Detail,
   tags: ['autodocs'],
   parameters: {

@@ -5,7 +5,7 @@ import { Buttons } from '../lib/components/Buttons'
 import { CardActions } from '../lib/components/CardActions'
 
 export default {
-  title: 'Components/Layout/CardActions',
+  title: 'Components/CardActions',
   component: CardActions,
   tags: ['autodocs'],
   parameters: {

@@ -9,7 +9,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Data/TableFooter',
+  title: 'Components/TableFooter',
   component: TableFooter,
   tags: ['autodocs'],
   parameters: {

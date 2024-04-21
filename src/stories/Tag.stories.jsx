@@ -9,7 +9,7 @@ import { Tag } from '../lib/components/Tag'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Data/Tag',
+  title: 'Components/Tag',
   component: Tag,
   tags: ['autodocs'],
   parameters: {

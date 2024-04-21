@@ -9,7 +9,7 @@ import { Step } from '../lib/components/Step'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Interactions/🚧 Step',
+  title: 'Components/🚧 Step',
   component: Step,
   tags: ['autodocs'],
   parameters: {

@@ -8,7 +8,7 @@ import { Snippet } from '../lib/components/Snippet'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Layout/Grid',
+  title: 'Components/Grid',
   component: Grid,
   tags: ['autodocs'],
   parameters: {

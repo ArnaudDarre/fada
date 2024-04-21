@@ -5,7 +5,7 @@ import { Paragraph } from '../lib/components/Paragraph'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Interactions/ModalContent',
+  title: 'Components/ModalContent',
   component: ModalContent,
   tags: ['autodocs'],
   parameters: {

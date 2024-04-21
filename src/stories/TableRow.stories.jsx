@@ -5,7 +5,7 @@ import { TableRow } from '../lib/components/TableRow'
 import { Tag } from '../lib/components/Tag'
 
 export default {
-  title: 'Components/Data/TableRow',
+  title: 'Components/TableRow',
   component: TableRow,
   tags: ['autodocs'],
   parameters: {

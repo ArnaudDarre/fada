@@ -11,7 +11,7 @@ import { Text } from '../lib/components/Text'
 // import { Colors } from '../lib/types'
 
 export default {
-  title: 'Components/Utils/🚧 Component',
+  title: 'Components/🚧 Component',
   component: Component,
   tags: ['autodocs'],
   parameters: {

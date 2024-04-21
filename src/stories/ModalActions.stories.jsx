@@ -5,7 +5,7 @@ import { Buttons } from '../lib/components/Buttons'
 import { ModalActions } from '../lib/components/ModalActions'
 
 export default {
-  title: 'Components/Interactions/ModalActions',
+  title: 'Components/ModalActions',
   component: ModalActions,
   tags: ['autodocs'],
   parameters: {

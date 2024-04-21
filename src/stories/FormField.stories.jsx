@@ -14,7 +14,7 @@ import { Switch } from '../lib/components/Switch'
 import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Forms/FormField',
+  title: 'Components/FormField',
   component: FormField,
   tags: ['autodocs'],
   parameters: {
