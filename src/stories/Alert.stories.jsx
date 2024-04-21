@@ -40,6 +40,7 @@ export const Type = () => (
 )
 
 Type.parameters = {
+  controls: { disable: true },
   docs: {
     description: {
       story: 'Convery the severity of the alert.'
@@ -75,13 +76,25 @@ export const Variant = () => {
   )
 }
 
+Variant.parameters = {
+  controls: { disable: true }
+}
+
 export const Subtitle = () => (
   <Alert variant="notice" title="Alert with subtitle" subtitle="This is the subtitle"></Alert>
 )
 
+Subtitle.parameters = {
+  controls: { disable: true }
+}
+
 export const Dense = () => (
   <Alert variant="notice" dense title="This is a dense alert"></Alert>
 )
+
+Dense.parameters = {
+  controls: { disable: true }
+}
 
 export const onClose = () => {
 
@@ -107,4 +120,8 @@ export const onClose = () => {
       <Alert title="Alert with onClose function" show={alerts['close']} onClose={() => closeAlert('close')} />
     </div>
   )
+}
+
+onClose.parameters = {
+  controls: { disable: true }
 }

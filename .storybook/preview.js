@@ -5,7 +5,7 @@ import '../src/lib/styles/index.scss'
 
 const preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { disable: true },
     docs: {
       theme: theme
     },
