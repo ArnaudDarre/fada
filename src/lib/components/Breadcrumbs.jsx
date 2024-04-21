@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { ChevronRight } from 'react-feather'
 
 import { Text } from './Text'
 
@@ -41,11 +40,9 @@ export const Breadcrumbs = ({
       ))} */}
       <Text className={classnames('breadcrumbs__item')}>Step 1</Text>
       <Text variant='caption' className={classnames('breadcrumbs__item')}>
-        <ChevronRight className={classnames('breadcrumbs__separator')} size={14} />
         Step 2
       </Text>
       <Text variant='caption' className={classnames('breadcrumbs__item')}>
-        <ChevronRight className={classnames('breadcrumbs__separator')} size={14} />
         Step 3
       </Text>
     </div>

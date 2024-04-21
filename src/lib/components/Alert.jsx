@@ -4,11 +4,7 @@ import { createPortal } from 'react-dom'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import {
-  AlertTriangle,
-  CheckCircle,
-  Info,
-  X,
-  XCircle
+  X
 } from 'react-feather'
 
 import { Text } from './Text'
@@ -35,18 +31,6 @@ export const Alert = ({
     if (!show) setRender(false)
   }
 
-  let icon
-
-  if (type === 'success') {
-    icon = <CheckCircle className={classnames('alert__icon')} size={ dense ? 20 : 24 } />
-  } else if (type === 'info') {
-    icon = <Info className={classnames('alert__icon')} size={ dense ? 20 : 24 } />
-  } else if (type === 'warning') {
-    icon = <AlertTriangle className={classnames('alert__icon')} size={ dense ? 20 : 24 } />
-  } else if (type === 'error') {
-    icon = <XCircle className={classnames('alert__icon')} size={ dense ? 20 : 24 } />
-  }
-
   let alert = (
     <div
       className={classnames([
@@ -63,7 +47,6 @@ export const Alert = ({
       onAnimationEnd={onAnimationEnd}
       {...props}
     >
-      {icon}
       <div className={classnames('alert__content')}>
         {title ? <Text className={classnames('alert__title')} variant={dense ? 'caption' : 'body'}  weight='bold'>{title}</Text> : null}
         {subtitle ? <Text variant={dense ? 'overline' : 'caption'} className={classnames('alert__subtitle')}>{subtitle}</Text> : null}

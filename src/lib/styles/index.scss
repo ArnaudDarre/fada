@@ -1,3 +1,9 @@
+$fonts-path: '~/public/fonts/';
+$icons-path: '~/public/icons/';
+
+@import '~/node_modules/pallote-css/dist/pallote.scss';
+
+
 // common
 @import './common/variables';
 @import './common/mixins';
@@ -9,9 +15,6 @@
 
 // components
 @import './components/accordion';
-@import './components/alert';
-@import './components/breadcrumbs';
-@import './components/button';
 @import './components/buttons';
 @import './components/card';
 @import './components/checkbox';
@@ -19,7 +22,6 @@
 @import './components/detail';
 @import './components/divider';
 @import './components/form-field';
-@import './components/grid';
 @import './components/link';
 @import './components/loader';
 @import './components/modal';
@@ -55,3 +57,4 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
