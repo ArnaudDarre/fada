@@ -4,8 +4,6 @@ import { Coffee, Moon, Sun } from 'react-feather'
 import { Button } from '../lib/components/Button'
 import { Grid } from '../lib/components/Grid'
 
-import { Colors, SizeFull } from '../lib/types'
-
 export default {
   title: 'Components/Button',
   component: Button,
@@ -22,16 +20,8 @@ export default {
     }
   },
   argTypes: {
-    color: {
-      defaultValue: 'primary',
-      options: Colors,
-      table: { type: { summary: Colors } }
-    },
-    size: {
-      defaultValue: 'md',
-      options: SizeFull,
-      table: { type: { summary: SizeFull } }
-    },
+    color: { defaultValue: 'primary' },
+    size: { defaultValue: 'md' },
     kind: { defaultValue: 'text' },
     variant: { defaultValue: 'fill' },
     component: { defaultValue: 'button' },
@@ -71,6 +61,7 @@ export const Variant = () => (
   <Grid wrapper spacing={2}>
     <Grid item><Button>Fill</Button></Grid>
     <Grid item><Button variant="stroke">Stroke</Button></Grid>
+    <Grid item><Button variant="transparent">Transparent</Button></Grid>
   </Grid>
 )
 
@@ -88,7 +79,6 @@ export const Size = () => (
     <Grid item><Button size="sm">Small</Button></Grid>
     <Grid item><Button>Medium</Button></Grid>
     <Grid item><Button size="lg">Large</Button></Grid>
-    <Grid item><Button size="xl">XLarge</Button></Grid>
   </Grid>
 )
 
@@ -97,11 +87,13 @@ export const Color = () => (
     <Grid item><Button>Primary</Button></Grid>
     <Grid item><Button color="secondary">Secondary</Button></Grid>
     <Grid item><Button color="highlight">highlight</Button></Grid>
-    <Grid item><Button color="grey-50">Grey</Button></Grid>
     <Grid item><Button color="success">Success</Button></Grid>
     <Grid item><Button color="info">Info</Button></Grid>
     <Grid item><Button color="warning">Warning</Button></Grid>
     <Grid item><Button color="error">Error</Button></Grid>
+    <Grid item><Button color="default">Default</Button></Grid>
+    <Grid item><Button color="contrast">Contrast</Button></Grid>
+    <Grid item><Button color="grey">Grey</Button></Grid>
   </Grid>
 )
 

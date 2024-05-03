@@ -2,9 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { Layer } from './Layer'
-import { Colors, SizeFull } from '../types'
-
 export const Button = ({
   color,
   size,
@@ -15,7 +12,6 @@ export const Button = ({
   disabled,
   iconLeft,
   iconRight,
-  isTransparent,
   className,
   children,
   ...props
@@ -28,23 +24,9 @@ export const Button = ({
   if (kind === 'text') {
     content = (
       <>
-        {iconLeft ? (
-          <span className={classnames(
-            'button__icons',
-            'button__icons--left'
-          )}>
-            {iconLeft}
-          </span>
-        ) : null}
+        {iconLeft ? iconLeft : null}
         {children}
-        {iconRight ? (
-          <span className={classnames(
-            'button__icons',
-            'button__icons--right'
-          )}>
-            {iconRight}
-          </span>
-        ) : null}
+        {iconRight ? iconRight : null}
       </>
     )
   } else if (kind === 'icon') {
@@ -56,50 +38,56 @@ export const Button = ({
   }
 
   return (
-    <Layer
+    <Component
       className={classnames([
-        'button__wrapper',
+        'button',
         {
           [`button--${size}`]: size,
+          [`button--${color}`]: color,
           [`button--${kind}`]: kind,
           [`button--${variant}`]: variant,
           'button--fullWidth': fullWidth,
-          'button--disabled': disabled,
-          'button--transparent': isTransparent
+          'button--disabled': disabled
         },
         className
       ])}
-      fill={variant === 'fill' ? color : null}
-      stroke={variant === 'stroke' ? color : null}
-      hasHover
       disabled={disabled}
+      {...props}
     >
-      <Component
-        className={classnames([
-          'button',
-          {
-            [`text--${color}`]: isTransparent
-          }
-        ])}
-        disabled={disabled}
-        {...props}
-      >
-        {content}
-      </Component>
-    </Layer>
+      {content}
+    </Component>
   )
 }
 
 Button.propTypes = {
-  color: PropTypes.oneOf(Colors),
-  size: PropTypes.oneOf(SizeFull),
+  color: PropTypes.oneOf([
+    'black',
+    'white',
+    'grey',
+    'primary',
+    'secondary',
+    'highlight',
+    'success',
+    'info',
+    'warning',
+    'error',
+    'default',
+    'contrast'
+  ]),
+  size: PropTypes.oneOf([
+    'xs',
+    'sm',
+    'md',
+    'lg'
+  ]),
   kind: PropTypes.oneOf([
     'text',
     'icon'
   ]),
   variant: PropTypes.oneOf([
     'fill',
-    'stroke'
+    'stroke',
+    'transparent'
   ]),
   component: PropTypes.oneOf([
     'button',
@@ -109,7 +97,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   iconLeft: PropTypes.node,
   iconRight: PropTypes.node,
-  isTransparent: PropTypes.bool,
   className: PropTypes.node,
   children: PropTypes.oneOfType([
     PropTypes.string,

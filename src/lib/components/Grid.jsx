@@ -10,7 +10,11 @@ export const Grid = ({
   alignItems,
   alignSelf,
   flexGrow,
-  col,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
   spacing,
   className,
   children,
@@ -19,17 +23,20 @@ export const Grid = ({
   return (
     <div
       className={classnames(
-        'grid',
         {
+          'grid': wrapper,
+          'grid__item': item,
           [`grid--${direction}`]: direction,
           [`grid--jc-${justifyContent}`]: justifyContent,
           [`grid--ai-${alignItems}`]: alignItems,
           [`grid--as-${alignSelf}`]: alignSelf,
           [`grid--fg-${flexGrow}`]: flexGrow,
-          [`grid--col-${col}`]: col,
-          [`grid--spacing-${spacing}`]: spacing,
-          'grid--wrapper': wrapper,
-          'grid__item': item
+          [`grid--xs${xs}`]: xs,
+          [`grid--sm${sm}`]: sm,
+          [`grid--md${md}`]: md,
+          [`grid--lg${lg}`]: lg,
+          [`grid--xl${xl}`]: xl,
+          [`grid--spacing${spacing}`]: spacing
         },
         className
       )}
@@ -45,30 +52,30 @@ Grid.propTypes = {
   item: PropTypes.bool,
   direction: PropTypes.oneOf([
     'column',
-    'column-reverse',
+    'columnReverse',
     'row',
-    'row-reverse'
+    'rowReverse'
   ]),
   justifyContent: PropTypes.oneOf([
     'center',
-    'flex-end',
-    'flex-start',
-    'space-around',
-    'space-between',
-    'space-evenly'
+    'end',
+    'start',
+    'spaceAround',
+    'spaceBetween',
+    'spaceEvenly'
   ]),
   alignItems: PropTypes.oneOf([
     'stretch',
     'center',
-    'flex-end',
-    'flex-start',
+    'end',
+    'start',
     'baseline'
   ]),
   alignSelf: PropTypes.oneOf([
     'stretch',
     'center',
-    'flex-end',
-    'flex-start',
+    'end',
+    'start',
     'baseline'
   ]),
   flexGrow: PropTypes.oneOf([
@@ -76,7 +83,19 @@ Grid.propTypes = {
     1,
     'auto'
   ]),
-  col: PropTypes.oneOf([
+  xs: PropTypes.oneOf([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+  ]),
+  sm: PropTypes.oneOf([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+  ]),
+  md: PropTypes.oneOf([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+  ]),
+  lg: PropTypes.oneOf([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+  ]),
+  xl: PropTypes.oneOf([
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
   ]),
   spacing: PropTypes.oneOf([
@@ -84,8 +103,4 @@ Grid.propTypes = {
   ]),
   className: PropTypes.node,
   children: PropTypes.any
-}
-
-Grid.defaultProps = {
-  direction: 'row'
 }

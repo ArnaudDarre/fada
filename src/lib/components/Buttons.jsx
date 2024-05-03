@@ -2,8 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { Size } from '../types'
-
 export const Buttons = ({ direction, spacing, className, children, ...props }) => {
   return (
     <div
@@ -27,7 +25,11 @@ Buttons.propTypes = {
     'landscape',
     'portrait'
   ]),
-  spacing: PropTypes.oneOf(Size),
+  spacing: PropTypes.oneOf([
+    'sm',
+    'md',
+    'lg'
+  ]),
   className: PropTypes.node,
   children: PropTypes.oneOfType([
     PropTypes.array,

@@ -61,14 +61,14 @@ export const Variant = () => {
 
   return (
     <Grid wrapper spacing={2} direction="column">
-      <Grid item>
+      <Grid item alignItems="start">
         <Button color="primary" onClick={() => openAlert('toast')}>Open toast alert</Button>
         <Alert title="Toast" show={alerts['toast']} />
       </Grid>
-      <Grid item>
+      <Grid item alignItems="start">
         <Alert variant="notice" title="Notice" subtitle="Inlined alert without absolute positionning to highlight content on the page" />
       </Grid>
-      <Grid item>
+      <Grid item alignItems="start">
         <Button color="primary" onClick={() => openAlert('bar')}>Open bar alert</Button>
         <Alert variant="bar" title="Bar" show={alerts['bar']} />
       </Grid>
