@@ -18,8 +18,8 @@ const preview = {
     options: {
       storySort: {
         order: [
-          'Intro',
-          'Styles',
+          'Introduction',
+          'Customise',
           'Utilities',
           'Components',
         ],

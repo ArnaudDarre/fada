@@ -1,0 +1,180 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Variables" />
+
+<div class="SBMarkdown">
+
+# Variables
+
+Here is a list of all available variables and their values.
+
+- [Colours](#colours)
+- [Typography](#typography)
+- [Misc](#misc)
+
+## Colours
+
+### Main
+
+```Sass
+$white: #FFFFFF;
+$black: #000A1E;
+```
+
+### Greys
+
+```Sass
+$grey-90: #1A2335;
+$grey-80: #333B4B;
+$grey-70: #4D5462;
+$grey-60: #666C78;
+$grey-50: #7F848E;
+$grey-40: #999DA5;
+$grey-30: #B2B5BB;
+$grey-20: #CCCED2;
+$grey-10: #E5E6E8;
+$grey-5: #F2F3F4;
+```
+
+### Background
+
+```Sass
+$background-default: $black;
+$background-paper: $grey-90;
+```
+
+### Text
+
+```Sass
+$text: $white;
+$text-contrast: $black;
+```
+
+### Brand
+
+```Sass
+$primary: #00F3FF;
+$primary-contrast: $text-contrast;
+
+$secondary: #E7FC00;
+$secondary-contrast: $text-contrast;
+
+$highlight: #FF74E6;
+$highlight-contrast: $text-contrast;
+```
+
+### Feedback
+
+```Sass
+$success: #27AE60;
+$success-contrast: $text;
+
+$info: #17A0CC;
+$info-contrast: $text;
+
+$warning: #FFDC46;
+$warning-contrast: $text-contrast;
+
+$error: #EB5757;
+$error-contrast: $text;
+```
+
+### Misc
+
+```Sass
+$border-color: rgba($text, 0.2);
+$border: 1px solid $border-color;
+$border-color-contrast: rgba($text-contrast, 0.2);
+$border-contrast: 1px solid $border-color;
+
+$hover: rgba($text, 0.12);
+$hover-contrast: rgba($text-contrast, 0.12);
+
+$overlay: rgba($text-contrast, 0.8);
+$overlay-contrast: rgba($text, 0.2);
+```
+
+## Typography
+
+### Font family
+
+```Sass
+$font: "Barlow", Arial, sans-serif !default;
+```
+
+### Font weights
+
+```Sass
+$font-regular: 400 !default;
+$font-bold: 700 !default;
+$font-black: 900 !default;
+```
+
+### Font styles
+
+```Sass
+$h1-size: 3rem !default;
+$h1-weight: $font-black !default;
+$h1-line-height: 1.25 !default;
+
+$h2-size: 2.5rem !default;
+$h2-weight: $font-black !default;
+$h2-line-height: 1.25 !default;
+
+$h3-size: 2rem !default;
+$h3-weight: $font-bold !default;
+$h3-line-height: 1.25 !default;
+
+$h4-size: 1.75rem !default;
+$h4-weight: $font-bold !default;
+$h4-line-height: 1.25 !default;
+
+$h5-size: 1.5rem !default;
+$h5-weight: $font-bold !default;
+$h5-line-height: 1.25 !default;
+
+$h6-size: 1.25rem !default;
+$h6-weight: $font-bold !default;
+$h6-line-height: 1.25 !default;
+
+$subtitle-size: 1.125rem !default;
+$subtitle-weight: $font-regular !default;
+$subtitle-line-height: 1.5 !default;
+
+$body-size: 1rem !default;
+$body-weight: $font-regular !default;
+$body-line-height: 1.5 !default;
+
+$caption-size: 0.875rem !default;
+$caption-weight: $font-regular !default;
+$caption-line-height: 1.5 !default;
+
+$overline-size: 0.75rem !default;
+$overline-weight: $font-regular !default;
+$overline-line-height: 1.5 !default;
+```
+
+## Misc
+
+### Box shadow
+
+```Sass
+$box-shadow: 0 0 $spacing-sm 0 rgba($text, 0.2) !default;
+```
+
+### Transition
+
+```Sass
+$transition-md: 0.4s ease 0s !default;
+$transition-lg: 0.8s ease 0s !default;
+```
+
+### Border radius
+
+```Sass
+$border-radius-sm: $spacing-xs !default;
+$border-radius-md: $spacing-sm !default;
+$border-radius-lg: $spacing-md !default;
+```
+
+</div>
