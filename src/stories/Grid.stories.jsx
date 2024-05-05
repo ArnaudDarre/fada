@@ -75,7 +75,7 @@ export const Direction = () => (
   </Grid>
 )
 
-export const justifyContent = () => (
+export const JustifyContent = () => (
   <Grid wrapper spacing={2}>
     <Grid item wrapper sm={4} spacing={1} direction="column">
       <Grid item><Snippet content="justifyContent='center'" dense /></Grid>
@@ -240,7 +240,7 @@ export const Spacing = () => (
   </Grid>
 )
 
-export const xs = () => (
+export const XS = () => (
   <Grid wrapper spacing={2}>
     <Grid item xs={1}><Snippet content="xs={1}" dense /></Grid>
     <Grid item xs={2}><Snippet content="xs={2}" dense /></Grid>
@@ -257,7 +257,7 @@ export const xs = () => (
   </Grid>
 )
 
-export const sm = () => (
+export const SM = () => (
   <Grid wrapper spacing={2}>
     <Grid item sm={1}><Snippet content="sm={1}" dense /></Grid>
     <Grid item sm={2}><Snippet content="sm={2}" dense /></Grid>
@@ -274,7 +274,7 @@ export const sm = () => (
   </Grid>
 )
 
-export const md = () => (
+export const MD = () => (
   <Grid wrapper spacing={2}>
     <Grid item md={1}><Snippet content="md={1}" dense /></Grid>
     <Grid item md={2}><Snippet content="md={2}" dense /></Grid>
@@ -291,7 +291,7 @@ export const md = () => (
   </Grid>
 )
 
-export const lg = () => (
+export const LG = () => (
   <Grid wrapper spacing={2}>
     <Grid item lg={1}><Snippet content="lg={1}" dense /></Grid>
     <Grid item lg={2}><Snippet content="lg={2}" dense /></Grid>
@@ -308,7 +308,7 @@ export const lg = () => (
   </Grid>
 )
 
-export const xl = () => (
+export const XL = () => (
   <Grid wrapper spacing={2}>
     <Grid item xl={1}><Snippet content="xl={1}" dense /></Grid>
     <Grid item xl={2}><Snippet content="xl={2}" dense /></Grid>

@@ -96,7 +96,7 @@ Dense.parameters = {
   controls: { disable: true }
 }
 
-export const onClose = () => {
+export const OnClose = () => {
 
   const [alerts, setAlerts] = useState({})
 
@@ -122,6 +122,6 @@ export const onClose = () => {
   )
 }
 
-onClose.parameters = {
+OnClose.parameters = {
   controls: { disable: true }
 }

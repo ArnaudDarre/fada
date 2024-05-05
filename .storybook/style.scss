@@ -72,6 +72,11 @@
   margin-bottom: 20px !important;
 }
 
+// list items on MDX docs pages
+.css-13o89h3 :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li))+li {
+  margin-top: 0 !important;
+}
+
 // —————————————————————————————————————————————————————————————————
 // overrides components
 // —————————————————————————————————————————————————————————————————
