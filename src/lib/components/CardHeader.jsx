@@ -70,14 +70,8 @@ export const CardHeader = ({ label, title, subtitle, actions, className, ...prop
 
 CardHeader.propTypes = {
   label: PropTypes.string,
-  title: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
-  subtitle: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   actions: PropTypes.node,
   className: PropTypes.node,
   children: PropTypes.any

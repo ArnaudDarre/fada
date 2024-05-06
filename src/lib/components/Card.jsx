@@ -12,6 +12,7 @@ export const Card = ({
   size,
   fill,
   direction,
+  align,
   noPadding,
   hasShadow,
   transparent,
@@ -30,8 +31,8 @@ export const Card = ({
               {
                 [`card--${size}`]: size,
                 [`card--${direction}`]: direction,
-                'card--noPadding': noPadding,
-                'card--shadow': hasShadow,
+                [`card--${align}`]: align,
+                'card--hasShadow': hasShadow,
                 'card--transparent': transparent
               },
               className
@@ -72,6 +73,11 @@ Card.propTypes = {
     'portrait',
     'landscape'
   ]),
+  align: PropTypes.oneOf([
+    'left',
+    'center',
+    'right'
+  ]),
   noPadding: PropTypes.bool,
   hasShadow: PropTypes.bool,
   transparent: PropTypes.bool,
@@ -83,6 +89,7 @@ Card.defaultProps = {
   size: 'md',
   fill: 'paper',
   direction: 'portrait',
+  align: 'left',
   noPadding: false,
   hasShadow: false,
   transparent: false

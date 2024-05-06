@@ -6,7 +6,6 @@ import { CardHeader } from '../lib/components/CardHeader'
 import { Grid } from '../lib/components/Grid'
 import { Paragraph } from '../lib/components/Paragraph'
 import { Text } from '../lib/components/Text'
-import { Snippet } from '../lib/components/Snippet'
 
 export default {
   title: 'Components/CardContent',
@@ -41,37 +40,16 @@ Playground.args = {
   )
 }
 
-export const Guide = Template.bind({})
-
-Guide.decorators = [
-  () => {
-    return (
-      <Grid wrapper spacing={6} direction="column">
-        <Grid item>
-          <Card size="sm" noPadding transparent>
-            <CardHeader
-              title={<Text code component="span">fullWidth</Text>}
-              subtitle="Use this prop to expand the content to the edges of the card, for exemple when displaying a table inside the component. This is only useful for portrait cards."
-            />
-            <CardContent>
-            </CardContent>
-            <CardContent>
-              <Grid wrapper col={6} spacing={1} direction="column">
-                <Grid item><Snippet content="<CardContent fullWidth></CardContent>" /></Grid>
-                <Grid item>
-                  <Card>
-                    <CardHeader
-                      title="Edible mushrooms"
-                    />
-                    <CardContent fullWidth>Edible mushrooms are the fleshy and edible fruit bodies of several species of macrofungi (fungi which bear fruiting structures that are large enough to be seen with the naked eye).
-                    </CardContent>
-                  </Card>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-    )
-  }
-]
+export const FullWidth = () => (
+  <Grid wrapper spacing={2}>
+    <Grid item md={4} sm={12}>
+      <Card>
+        <CardHeader
+          title="Full width content (remove left and right padding)"
+        />
+        <CardContent fullWidth>Edible mushrooms are the fleshy and edible fruit bodies of several species of macrofungi (fungi which bear fruiting structures that are large enough to be seen with the naked eye).
+        </CardContent>
+      </Card>
+    </Grid>
+  </Grid>
+)
