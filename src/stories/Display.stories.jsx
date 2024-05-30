@@ -3,13 +3,11 @@ import React from 'react'
 import { Display } from '../lib/components/Display'
 import { Card } from '../lib/components/Card'
 import { CardContent } from '../lib/components/CardContent'
-import { CardHeader } from '../lib/components/CardHeader'
 import { Grid } from '../lib/components/Grid'
 import { Snippet } from '../lib/components/Snippet'
-import { Text } from '../lib/components/Text'
 
 export default {
-  title: 'Components/Display',
+  title: 'Utilities/Display',
   component: Display,
   tags: ['autodocs'],
   parameters: {
@@ -20,190 +18,122 @@ export default {
     }
   },
   argTypes: {
-    show: { defaultValue:  true },
-    hide: { defaultValue:  false },
-    viewport: { defaultValue:  'desktop' },
     children: { control: false }
   }
 }
 
-const Template = (args) => <Display {...args} />
+const Template = (args) => <Display show="desktop" {...args} />
 
 export const Playground = Template.bind({})
 
 Playground.args = {
   children: (
-    <Card size="xs">
-      <Snippet content="To see the component in action, change the props values and resize your screen" />
-    </Card>
+    <Card size="xs"><CardContent>Display</CardContent></Card>
   )
 }
 
-export const Guide = Template.bind({})
+export const Show = () => (
+  <Grid wrapper spacing={2}>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="show='mobile-sm'" dense /></Grid>
+      <Display show="mobile-sm">
+        <Grid item>
+          <Card size="xs"><CardContent>Show on small mobile</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="show='mobile'" dense /></Grid>
+      <Display show="mobile">
+        <Grid item>
+          <Card size="xs"><CardContent>Show on mobile</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="show='tablet'" dense /></Grid>
+      <Display show="tablet">
+        <Grid item>
+          <Card size="xs"><CardContent>Show on tablet</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="show='laptop'" dense /></Grid>
+      <Display show="laptop">
+        <Grid item>
+          <Card size="xs"><CardContent>Show on laptop</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="show='desktop'" dense /></Grid>
+      <Display show="desktop">
+        <Grid item>
+          <Card size="xs"><CardContent>Show on desktop</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+  </Grid>
+)
 
-Guide.decorators = [
-  () => {
-    return (
-      <Grid wrapper spacing={6} direction="column">
-        <Grid item>
-          <Card size="sm" noPadding transparent>
-            <CardHeader
-              title={<Text code component="span">show</Text>}
-              subtitle={
-                <>
-                  Show the component depending on viewport width (needs to be paired with
-                  <Text code component="span">viewport</Text>
-                  prop).
-                </>
-              }
-            />
-            <CardContent>
-              <Grid wrapper spacing={2}>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="show viewport='mobile-sm'" dense /></Grid>
-                  <Grid item>
-                    <Display show viewport="mobile-sm">
-                      <Snippet content="Show on mobile small" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="show viewport='mobile'" dense /></Grid>
-                  <Grid item>
-                    <Display show viewport="mobile">
-                      <Snippet content="Show on mobile" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="show viewport='tablet'" dense /></Grid>
-                  <Grid item>
-                    <Display show viewport="tablet">
-                      <Snippet content="Show on tablet" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="show viewport='laptop'" dense /></Grid>
-                  <Grid item>
-                    <Display show viewport="laptop">
-                      <Snippet content="Show on laptop" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="show viewport='desktop'" dense /></Grid>
-                  <Grid item>
-                    <Display show viewport="desktop">
-                      <Snippet content="Show on desktop" />
-                    </Display>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item>
-          <Card size="sm" noPadding transparent>
-            <CardHeader
-              title={<Text code component="span">hide</Text>}
-              subtitle={
-                <>
-                  Hide the component depending on viewport width (needs to be paired with
-                  <Text code component="span">viewport</Text>
-                  prop).
-                </>
-              }
-            />
-            <CardContent>
-              <Grid wrapper spacing={2}>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="hide viewport='mobile-sm'" dense /></Grid>
-                  <Grid item>
-                    <Display hide viewport="mobile-sm">
-                      <Snippet content="Hide on mobile small" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="hide viewport='mobile'" dense /></Grid>
-                  <Grid item>
-                    <Display hide viewport="mobile">
-                      <Snippet content="Hide on mobile" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="hide viewport='tablet'" dense /></Grid>
-                  <Grid item>
-                    <Display hide viewport="tablet">
-                      <Snippet content="Hide on tablet" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="hide viewport='laptop'" dense /></Grid>
-                  <Grid item>
-                    <Display hide viewport="laptop">
-                      <Snippet content="Hide on laptop" />
-                    </Display>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="hide viewport='desktop'" dense /></Grid>
-                  <Grid item>
-                    <Display hide viewport="desktop">
-                      <Snippet content="Hide on desktop" />
-                    </Display>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item>
-          <Card size="sm" noPadding transparent>
-            <CardHeader
-              title={<Text code component="span">viewport</Text>}
-              subtitle="Choose the breakpoint from which your will show or hide the component."
-            />
-            <CardContent>
-              <Grid wrapper spacing={2} direction="column">
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="viewport='mobile-sm'" dense /></Grid>
-                  <Grid item>
-                    <Snippet content="375px" className="w-mobile-sm" />
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="viewport='mobile'" dense /></Grid>
-                  <Grid item>
-                    <Snippet content="576px" className="w-mobile" />
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="viewport='tablet'" dense /></Grid>
-                  <Grid item>
-                    <Snippet content="768px" className="w-tablet" />
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="viewport='laptop'" dense /></Grid>
-                  <Grid item>
-                    <Snippet content="1024px" className="w-laptop" />
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={4} spacing={1} direction="column">
-                  <Grid item><Snippet content="viewport='desktop'" dense /></Grid>
-                  <Grid item>
-                    <Snippet content="1280px" className="w-desktop" />
-                  </Grid>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-    )
+Show.parameters = {
+  docs: {
+    description: {
+      story: 'Show the component depending on viewport width (resize your browser to see it in action).'
+    }
   }
-]
+}
+
+export const Hide = () => (
+  <Grid wrapper spacing={2}>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="hide='mobile-sm'" dense /></Grid>
+      <Display hide="mobile-sm">
+        <Grid item>
+          <Card size="xs"><CardContent>Hide on small mobile</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="hide='mobile'" dense /></Grid>
+      <Display hide="mobile">
+        <Grid item>
+          <Card size="xs"><CardContent>Hide on mobile</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="hide='tablet'" dense /></Grid>
+      <Display hide="tablet">
+        <Grid item>
+          <Card size="xs"><CardContent>Hide on tablet</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="hide='laptop'" dense /></Grid>
+      <Display hide="laptop">
+        <Grid item>
+          <Card size="xs"><CardContent>Hide on laptop</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+    <Grid item wrapper col={4} spacing={1} direction="column">
+      <Grid item><Snippet content="hide='desktop'" dense /></Grid>
+      <Display hide="desktop">
+        <Grid item>
+          <Card size="xs"><CardContent>Hide on desktop</CardContent></Card>
+        </Grid>
+      </Display>
+    </Grid>
+  </Grid>
+)
+
+Hide.parameters = {
+  docs: {
+    description: {
+      story: 'Hide the component depending on viewport width (resize your browser to see it in action).'
+    }
+  }
+}

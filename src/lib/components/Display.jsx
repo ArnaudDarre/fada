@@ -1,44 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
-export const Display = ({ show, hide, viewport, children }) => {
+const viewportSizes = {
+  'mobile-sm': 375,
+  'mobile': 576,
+  'tablet': 768,
+  'laptop': 1024,
+  'desktop': 1280
+}
 
-  let viewportValue
-
-  if (viewport === 'mobile-sm') { viewportValue = 375 }
-  else if (viewport === 'mobile') { viewportValue = 576 }
-  else if (viewport === 'tablet') { viewportValue = 768 }
-  else if (viewport === 'laptop') { viewportValue = 1024 }
-  else if (viewport === 'desktop') { viewportValue = 1280 }
-
-  const [isDisplayed, setDisplayed] = useState(window.innerWidth > viewportValue)
+export const Display = ({ show, hide, children }) => {
+  const [isDisplayed, setDisplayed] = useState(false)
 
   const updateMedia = () => {
-    if (show === true) {
+    const viewportValue = viewportSizes[show || hide]
+    if (show) {
       setDisplayed(window.innerWidth <= viewportValue)
-    } else if (hide === true) {
+    } else if (hide) {
       setDisplayed(window.innerWidth > viewportValue)
     }
   }
 
   useEffect(() => {
-    window.onload = function () { window.addEventListener('load', updateMedia) } // needed for IE support
-    window.addEventListener('load', updateMedia) // needed for IE and other browser support
+    updateMedia()
     window.addEventListener('resize', updateMedia)
     return () => window.removeEventListener('resize', updateMedia)
-  })
+  }, [show, hide])
 
-  return (
-    <>
-      { isDisplayed ? ( children ) : null }
-    </>
-  )
+  return <>{isDisplayed ? children : null}</>
 }
 
 Display.propTypes = {
-  show: PropTypes.bool,
-  hide: PropTypes.bool,
-  viewport: PropTypes.oneOf([
+  show: PropTypes.oneOf([
+    'mobile-sm',
+    'mobile',
+    'tablet',
+    'laptop',
+    'desktop'
+  ]),
+  hide: PropTypes.oneOf([
     'mobile-sm',
     'mobile',
     'tablet',
