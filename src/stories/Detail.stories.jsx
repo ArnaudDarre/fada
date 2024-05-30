@@ -21,9 +21,9 @@ export default {
     }
   },
   argTypes: {
-    icon: { control: { type: null } },
+    icon: { control: false },
     bold: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

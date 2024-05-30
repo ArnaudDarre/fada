@@ -20,12 +20,12 @@ export default {
     }
   },
   argTypes: {
-    id: { control: { type: null } },
-    name: { control: { type: null } },
-    value: { control: { type: null } },
+    id: { control: false },
+    name: { control: false },
+    value: { control: false },
     label: { defaultValue: 'Radio' },
     disabled: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

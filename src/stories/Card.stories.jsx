@@ -25,12 +25,12 @@ export default {
   argTypes: {
     direction: { defaultValue: 'portrait' },
     transparent: { defaultValue: false },
-    className: { control: { type: null } },
-    children: { control: { type: null } }
+    className: { control: false },
+    children: { control: false }
   }
 }
 
-const Template = (args) => <Card {...args} />
+const Template = (args) => <Card {...args} style={{ maxWidth: 400 }} />
 
 export const Playground = Template.bind({})
 

@@ -20,7 +20,7 @@ export default {
     }
   },
   argTypes: {
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

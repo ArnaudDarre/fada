@@ -17,8 +17,8 @@ export default {
     }
   },
   argTypes: {
-    children: { control: { type: null } },
-    className: { control: { type: null } }
+    children: { control: false },
+    className: { control: false }
   }
 }
 

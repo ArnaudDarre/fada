@@ -27,10 +27,10 @@ export default {
     component: { defaultValue: 'button' },
     fullWidth: { defaultValue: false },
     disabled: { defaultValue: false },
-    iconLeft: { control: { type: null } },
-    iconRight: { control: { type: null } },
+    iconLeft: { control: false },
+    iconRight: { control: false },
     isTransparent: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

@@ -24,8 +24,8 @@ export default {
       options: Size,
       table: { type: { summary: Size } }
     },
-    className: { control: { type: null } },
-    children: { control: { type: null } }
+    className: { control: false },
+    children: { control: false }
   }
 }
 
@@ -42,7 +42,7 @@ Playground.args = {
   )
 }
 
-export const Direction = () => (
+export const Directions = () => (
   <Grid wrapper spacing={2}>
     <Grid item>
       <Buttons>

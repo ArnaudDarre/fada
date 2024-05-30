@@ -23,7 +23,7 @@ export default {
     show: { defaultValue:  true },
     hide: { defaultValue:  false },
     viewport: { defaultValue:  'desktop' },
-    children: { control: { type: null } }
+    children: { control: false }
   }
 }
 

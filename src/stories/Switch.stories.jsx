@@ -11,7 +11,6 @@ import { Text } from '../lib/components/Text'
 export default {
   title: 'Components/Switch',
   component: Switch,
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
@@ -20,11 +19,11 @@ export default {
     }
   },
   argTypes: {
-    id: { control: { type: null } },
+    id: { control: false },
     startLabel: { defaultValue: '' },
     endLabel: { defaultValue: 'Switch' },
     disabled: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

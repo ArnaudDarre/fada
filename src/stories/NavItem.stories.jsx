@@ -22,10 +22,10 @@ export default {
     }
   },
   argTypes: {
-    icon: { control: { type: null } },
-    dropdown: { control: { type: null } },
-    className: { control: { type: null } },
-    children: { control: { type: null } }
+    icon: { control: false },
+    dropdown: { control: false },
+    className: { control: false },
+    children: { control: false }
   },
   decorators: [
     (Story) => (

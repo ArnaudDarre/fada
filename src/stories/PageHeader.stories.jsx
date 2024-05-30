@@ -27,7 +27,7 @@ export default {
       options: Align,
       table: { type: { summary: Align } }
     },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

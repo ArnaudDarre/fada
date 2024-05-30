@@ -17,8 +17,8 @@ export default {
   },
   argTypes: {
     fullWidth: { defaultValue: false },
-    className: { control: { type: null } },
-    children: { control: { type: null } }
+    className: { control: false },
+    children: { control: false }
   }
 }
 

@@ -20,13 +20,13 @@ export default {
     }
   },
   argTypes: {
-    id: { control: { type: null } },
-    value: { control: { type: null } },
+    id: { control: false },
+    value: { control: false },
     label: { defaultValue: 'Checkbox' },
     checked: { defaultValue: false },
     partial: { defaultValue: false },
     disabled: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

@@ -51,7 +51,7 @@ export default {
     },
     gutter: { defaultValue: false },
     component: { defaultValue: 'p' },
-    className: { control: { type: null } },
+    className: { control: false },
     children: { control: { type: 'text' } }
   }
 }

@@ -15,9 +15,9 @@ export default {
     }
   },
   argTypes: {
-    show: { control: { type: null } },
-    onClose: { control: { type: null } },
-    className: { control: { type: null } }
+    show: { control: false },
+    onClose: { control: false },
+    className: { control: false }
   }
 }
 

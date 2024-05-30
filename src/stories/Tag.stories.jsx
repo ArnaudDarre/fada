@@ -21,7 +21,7 @@ export default {
   },
   argTypes: {
     dense: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

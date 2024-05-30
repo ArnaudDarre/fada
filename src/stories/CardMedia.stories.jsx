@@ -25,7 +25,7 @@ export default {
       table: { type: { summary: SizeFull } }
     },
     fullWidth: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

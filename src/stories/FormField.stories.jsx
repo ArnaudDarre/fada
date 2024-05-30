@@ -25,7 +25,7 @@ export default {
     }
   },
   argTypes: {
-    onChange: { control: { type: null } },
+    onChange: { control: false },
     kind: {
       defaultValue: 'input',
       control: { type: 'select' }
@@ -34,14 +34,14 @@ export default {
     placeholder: { defaultValue: '' },
     label: { defaultValue: 'Label' },
     notice: { defaultValue: '' },
-    customIcon:{ control: { type: null } },
+    customIcon:{ control: false },
     direction: { defaultValue: 'landscape' },
     disabled: { defaultValue: false },
     error: { defaultValue: false },
-    onFocus:{ control: { type: null } },
-    onBlur:{ control: { type: null } },
-    children:{ control: { type: null } },
-    className: { control: { type: null } }
+    onFocus:{ control: false },
+    onBlur:{ control: false },
+    children:{ control: false },
+    className: { control: false }
   }
 }
 

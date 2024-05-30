@@ -21,7 +21,7 @@ export default {
   },
   argTypes: {
     disabled: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

@@ -10,7 +10,6 @@ import { Text } from '../lib/components/Text'
 export default {
   title: 'Components/Snippet',
   component: Snippet,
-  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
@@ -22,7 +21,7 @@ export default {
     content: { defaultValue: 'Insert code here…' },
     defaultValue: { defaultValue: false },
     isTransparent: { defaultValue: false },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

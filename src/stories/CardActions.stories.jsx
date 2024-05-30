@@ -18,8 +18,8 @@ export default {
     }
   },
   argTypes: {
-    className: { control: { type: null } },
-    children: { control: { type: null } }
+    className: { control: false },
+    children: { control: false }
   }
 }
 
@@ -39,7 +39,7 @@ Playground.args = {
   )
 }
 
-export const Transparent = () => (
+export const Direction = () => (
   <Grid wrapper spacing={2}>
     <Grid item md={4} sm={12}>
       <Card>

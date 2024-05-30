@@ -24,7 +24,7 @@ export default {
   },
   argTypes: {
     align: { defaultValue: 'left' },
-    className: { control: { type: null } }
+    className: { control: false }
   }
 }
 

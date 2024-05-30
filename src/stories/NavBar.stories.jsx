@@ -19,8 +19,8 @@ export default {
     }
   },
   argTypes: {
-    className: { control: { type: null } },
-    children: { control: { type: null } }
+    className: { control: false },
+    children: { control: false }
   },
   decorators: [
     (Story) => (
