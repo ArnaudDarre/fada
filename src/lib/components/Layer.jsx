@@ -5,26 +5,28 @@ import PropTypes from 'prop-types'
 export const Layer = ({
   fill,
   stroke,
-  custom,
-  fullWidth,
+  customFill,
+  customStroke,
   hasHover,
-  disabled,
   className,
   children,
   ...props
 }) => {
 
+  const style = {
+    ...(customFill ? { backgroundColor: `${customFill}` } : {}),
+    ...(customStroke ? { border: `1px solid ${customStroke}` } : {})
+  }
+
   return (
     <div
-      style={custom ? { backgroundColor: fill, border: '1px solid' + stroke } : null}
+      style={style}
       className={classnames([
         'layer',
         {
           [`fill--${fill}`]: fill,
           [`stroke--${stroke}`]: stroke,
-          'layer--fullWidth': fullWidth,
-          'layer--hover': hasHover,
-          'layer--disabled': disabled
+          'layer--hover': hasHover
         },
         className
       ])}
@@ -36,66 +38,55 @@ export const Layer = ({
 }
 
 Layer.propTypes = {
-  fill: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'black',
-      'white',
-      'background',
-      'paper',
-      'grey-90',
-      'grey-80',
-      'grey-70',
-      'grey-60',
-      'grey-50',
-      'grey-40',
-      'grey-30',
-      'grey-20',
-      'grey-10',
-      'grey-5',
-      'primary',
-      'secondary',
-      'highlight',
-      'success',
-      'info',
-      'warning',
-      'error'
-    ]),
-    PropTypes.string
+  fill: PropTypes.oneOf([
+    'black',
+    'white',
+    'background',
+    'paper',
+    'grey-90',
+    'grey-80',
+    'grey-70',
+    'grey-60',
+    'grey-50',
+    'grey-40',
+    'grey-30',
+    'grey-20',
+    'grey-10',
+    'grey-5',
+    'primary',
+    'secondary',
+    'highlight',
+    'success',
+    'info',
+    'warning',
+    'error'
   ]),
-  stroke: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'black',
-      'white',
-      'background',
-      'paper',
-      'grey-90',
-      'grey-80',
-      'grey-70',
-      'grey-60',
-      'grey-50',
-      'grey-40',
-      'grey-30',
-      'grey-20',
-      'grey-10',
-      'grey-5',
-      'primary',
-      'secondary',
-      'highlight',
-      'success',
-      'info',
-      'warning',
-      'error'
-    ]),
-    PropTypes.string
+  stroke: PropTypes.oneOf([
+    'black',
+    'white',
+    'background',
+    'paper',
+    'grey-90',
+    'grey-80',
+    'grey-70',
+    'grey-60',
+    'grey-50',
+    'grey-40',
+    'grey-30',
+    'grey-20',
+    'grey-10',
+    'grey-5',
+    'primary',
+    'secondary',
+    'highlight',
+    'success',
+    'info',
+    'warning',
+    'error'
   ]),
-  custom: PropTypes.bool,
-  fullWidth: PropTypes.bool,
+  customFill: PropTypes.string,
+  customStroke: PropTypes.string,
   hasHover: PropTypes.bool,
-  disabled: PropTypes.bool,
   className: PropTypes.node,
   children: PropTypes.any
-}
-
-Layer.defaultProps = {
-  fullWidth: false
 }
