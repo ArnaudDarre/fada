@@ -2,13 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import {
-  AlignFull,
-  ColorsText,
-  TextVariant,
-  TextWeight
-} from '../types'
-
 export const Text = ({
   variant,
   align,
@@ -18,7 +11,6 @@ export const Text = ({
   italic,
   code,
   color,
-  gutter,
   component,
   className,
   children,
@@ -37,7 +29,6 @@ export const Text = ({
           [`text--${weight}`]: weight,
           [`text--${transform}`]: transform,
           [`text--${color}`]: color,
-          'text--gutter': gutter,
           'text--underline': underline,
           'text--italic': italic,
           'text--code': code
@@ -52,9 +43,29 @@ export const Text = ({
 }
 
 Text.propTypes = {
-  variant: PropTypes.oneOf(TextVariant),
-  align: PropTypes.oneOf(AlignFull),
-  weight: PropTypes.oneOf(TextWeight),
+  variant: PropTypes.oneOf([
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'subtitle',
+    'body',
+    'caption',
+    'overline'
+  ]),
+  align: PropTypes.oneOf([
+    'left',
+    'center',
+    'right',
+    'justify'
+  ]),
+  weight: PropTypes.oneOf([
+    'light',
+    'regular',
+    'bold'
+  ]),
   transform: PropTypes.oneOf([
     'none',
     'capitalize',
@@ -66,8 +77,21 @@ Text.propTypes = {
   underline: PropTypes.bool,
   italic: PropTypes.bool,
   code: PropTypes.bool,
-  color: PropTypes.oneOf(ColorsText),
-  gutter: PropTypes.bool,
+  color: PropTypes.oneOf([
+    'default',
+    'alt',
+    'disabled',
+    'contrast',
+    'contrastAlt',
+    'contrastDisabled',
+    'primary',
+    'secondary',
+    'highlight',
+    'success',
+    'info',
+    'warning',
+    'error'
+  ]),
   component: PropTypes.oneOf([
     'h1',
     'h2',
@@ -87,6 +111,5 @@ Text.propTypes = {
 Text.defaultProps = {
   underline: false,
   italic: false,
-  gutter: false,
   component: 'p'
 }

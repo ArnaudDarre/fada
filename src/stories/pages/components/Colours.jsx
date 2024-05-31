@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Grid } from '../../../lib/components/Grid'
 import { Text } from '../../../lib/components/Text'
 
-const Colour =({
+const Colour = ({
   background,
   // hasBorder,
   variable

@@ -4,8 +4,6 @@ import { Grid } from '../lib/components/Grid'
 import { Layer } from '../lib/components/Layer'
 import { Text } from '../lib/components/Text'
 
-import { ColorsFull } from '../lib/types'
-
 export default {
   title: 'Utilities/Layer',
   component: Layer,
@@ -18,17 +16,8 @@ export default {
     }
   },
   argTypes: {
-    fill: {
-      defaultValue: 'primary',
-      options: ColorsFull,
-      table: { type: { summary: ColorsFull } }
-    },
-    stroke: {
-      defaultValue: 'primary',
-      options: ColorsFull,
-      table: { type: { summary: ColorsFull } }
-    },
-    custom: { control: 'color' },
+    customFill: { control: 'color' },
+    customStroke: { control: 'color' },
     wrapper: { defaultValue: false },
     className: { control: false },
     children: { control: false }
