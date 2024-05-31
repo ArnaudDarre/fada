@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { ChevronDown } from 'react-feather'
+import { CaretDown } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 
 import { NavGroup, SizeContext } from './NavGroup'
@@ -58,7 +58,7 @@ export const NavItem = ({
       >
         {icon ? (<span className={classnames('navItem__icon')}>{icon}</span>) : null}
         <span>{label}</span>
-        {dropdown ? (<span className={classnames('navItem__icon')}><ChevronDown /></span>) : null}
+        {dropdown ? (<span className={classnames('navItem__icon')}><CaretDown /></span>) : null}
       </Component>
       {dropdown ? (
         <NavGroup

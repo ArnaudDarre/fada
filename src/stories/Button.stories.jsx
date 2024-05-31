@@ -1,5 +1,5 @@
 import React from 'react'
-import { Coffee, Moon, Sun } from 'react-feather'
+import { Coffee, Moon, Sun } from '@phosphor-icons/react'
 
 import { Button } from '../lib/components/Button'
 import { Grid } from '../lib/components/Grid'

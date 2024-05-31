@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { ChevronDown } from 'react-feather'
+import { CaretDown } from '@phosphor-icons/react'
 
 import { Text } from './Text'
 
@@ -79,7 +79,7 @@ export const FormField = ({
   let icon
 
   if (kind === 'select') {
-    icon = <ChevronDown />
+    icon = <CaretDown />
   } else {
     icon = customIcon
   }

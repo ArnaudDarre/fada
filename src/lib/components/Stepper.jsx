@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { Check } from 'react-feather'
+import { Check } from '@phosphor-icons/react'
 
 import { Text } from './Text'
 

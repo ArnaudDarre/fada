@@ -1,6 +1,6 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
-import { Play } from 'react-feather'
+import { Play } from '@phosphor-icons/react'
 
 import { Card } from '../lib/components/Card'
 import { CardContent } from '../lib/components/CardContent'

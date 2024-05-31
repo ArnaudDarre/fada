@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { X } from 'react-feather'
+import { X } from '@phosphor-icons/react'
 
 import { Card } from './Card'
 

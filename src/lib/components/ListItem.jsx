@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 
 import { Text } from './Text'
 
-export const ListItem = ({ icon, bold, className, children, ...props }) => {
+export const ListItem = ({ icon, dense, bold, className, children, ...props }) => {
 
   return (
     <div
       className={classnames([
         'list__item',
         {
+          'list__item--dense': dense,
           'list__item--bold': bold
         },
         className
@@ -25,6 +26,7 @@ export const ListItem = ({ icon, bold, className, children, ...props }) => {
 
 ListItem.propTypes = {
   icon: PropTypes.any,
+  dense: PropTypes.bool,
   bold: PropTypes.bool,
   className: PropTypes.node,
   children: PropTypes.string

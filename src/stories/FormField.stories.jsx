@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calendar } from 'react-feather'
+import { CalendarBlank } from '@phosphor-icons/react'
 
 import { Card } from '../lib/components/Card'
 import { CardContent } from '../lib/components/CardContent'
@@ -128,7 +128,7 @@ Guide.decorators = [
               <Grid wrapper col={4} spacing={1} direction="column">
                 <Grid item><Snippet content="customIcon={ {/* insert object */} }" dense /></Grid>
                 <Grid item>
-                  <FormField id="icon" label="Custom icon" customIcon={<Calendar />} />
+                  <FormField id="icon" label="Custom icon" customIcon={<CalendarBlank />} />
                 </Grid>
               </Grid>
             </CardContent>

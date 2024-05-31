@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'react-feather'
+import { CaretLeft, CaretRight, CaretDoubleLeft, CaretDoubleRight } from '@phosphor-icons/react'
 
 import { FormField } from './FormField'
 import { SelectOption } from './SelectOption'
@@ -34,15 +34,15 @@ export const TableFooter = ({
         </FormField>
       </div>
       <div className={classnames('tableFooter__pages')}>
-        <span className={classnames('tableFooter__button tableFooter__first')}><ChevronsLeft size={16} /></span>
-        <span className={classnames('tableFooter__button tableFooter__prev')}><ChevronLeft size={16} /></span>
+        <span className={classnames('tableFooter__button tableFooter__first')}><CaretDoubleLeft size={16} /></span>
+        <span className={classnames('tableFooter__button tableFooter__prev')}><CaretLeft size={16} /></span>
         <button className={classnames('tableFooter__button tableFooter__button--active tableFooter__page')}><Text variant='caption'>1</Text></button>
         <button className={classnames('tableFooter__button tableFooter__page')}><Text variant='caption'>2</Text></button>
         <button className={classnames('tableFooter__button tableFooter__page')}><Text variant='caption'>3</Text></button>
         <button className={classnames('tableFooter__button tableFooter__dots')}><Text variant='caption'>…</Text></button>
         <button className={classnames('tableFooter__button tableFooter__page')}><Text variant='caption'>8</Text></button>
-        <span className={classnames('tableFooter__button tableFooter__next')}><ChevronRight size={16} /></span>
-        <span className={classnames('tableFooter__button tableFooter__last')}><ChevronsRight size={16} /></span>
+        <span className={classnames('tableFooter__button tableFooter__next')}><CaretRight size={16} /></span>
+        <span className={classnames('tableFooter__button tableFooter__last')}><CaretDoubleRight size={16} /></span>
       </div>
     </div>
   )

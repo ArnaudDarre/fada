@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { Info } from 'react-feather'
+import { Info } from '@phosphor-icons/react'
 
 export const Tooltip = ({
   infoIcon,

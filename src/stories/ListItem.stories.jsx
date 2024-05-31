@@ -1,5 +1,5 @@
 import React from 'react'
-import { Play } from 'react-feather'
+import { Sun } from '@phosphor-icons/react'
 
 import { ListItem } from '../lib/components/ListItem'
 
@@ -26,10 +26,14 @@ const Template = (args) => <ListItem {...args} />
 export const Playground = Template.bind({})
 
 Playground.args = {
-  icon: <Play />,
+  icon: <Sun />,
   children: 'ListItem'
 }
 
 export const Dense = () => (
-  <ListItem bold>Bold</ListItem>
+  <ListItem icon={<Sun />} dense>Dense</ListItem>
+)
+
+export const Bold = () => (
+  <ListItem icon={<Sun />} bold>Bold</ListItem>
 )
