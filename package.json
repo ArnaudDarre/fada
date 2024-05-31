@@ -83,7 +83,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^11.3.0",
     "eslint-plugin-storybook": "^0.6.13",
-    "pallote-css": "^0.2.19",
+    "pallote-css": "^0.2.20",
     "prop-types": "^15.8.1",
     "storybook": "^7.4.0",
     "webpack": "^5.88.2"

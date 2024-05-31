@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { Check, Minus } from 'react-feather'
 
 import { Text } from './Text'
 
@@ -10,7 +9,6 @@ export const Checkbox = ({
   value,
   label,
   checked,
-  partial,
   disabled,
   className,
   ...props
@@ -24,12 +22,12 @@ export const Checkbox = ({
       ])}
     >
       <input
-        className={classnames('checkbox__input')}
+        className={classnames('checkbox__control')}
         type="checkbox"
         name={id}
         id={id}
         value={value}
-        defaultChecked={checked}
+        checked={checked}
         disabled={disabled}
         {...props}
       />
@@ -41,11 +39,6 @@ export const Checkbox = ({
       >
         {label}
       </Text>
-      {partial ? (
-        <Minus className={classnames('checkbox__icon')} />
-      ) : (
-        <Check className={classnames('checkbox__icon')} />
-      )}
     </div>
   )
 }
@@ -55,13 +48,6 @@ Checkbox.propTypes = {
   value: PropTypes.string,
   label: PropTypes.string,
   checked: PropTypes.bool,
-  partial: PropTypes.bool,
   disabled: PropTypes.bool,
   className: PropTypes.node
-}
-
-Checkbox.defaultProps = {
-  checked: false,
-  partial: false,
-  disabled: false
 }

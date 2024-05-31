@@ -84,16 +84,22 @@ export const Size = () => (
 
 export const Color = () => (
   <Grid wrapper spacing={2}>
-    <Grid item><Button>Primary</Button></Grid>
-    <Grid item><Button color="secondary">Secondary</Button></Grid>
-    <Grid item><Button color="highlight">highlight</Button></Grid>
-    <Grid item><Button color="success">Success</Button></Grid>
-    <Grid item><Button color="info">Info</Button></Grid>
-    <Grid item><Button color="warning">Warning</Button></Grid>
-    <Grid item><Button color="error">Error</Button></Grid>
-    <Grid item><Button color="default">Default</Button></Grid>
-    <Grid item><Button color="contrast">Contrast</Button></Grid>
-    <Grid item><Button color="grey">Grey</Button></Grid>
+    <Grid item wrapper spacing={2}>
+      <Grid item><Button>Primary</Button></Grid>
+      <Grid item><Button color="secondary">Secondary</Button></Grid>
+      <Grid item><Button color="highlight">highlight</Button></Grid>
+    </Grid>
+    <Grid item wrapper spacing={2}>
+      <Grid item><Button color="success">Success</Button></Grid>
+      <Grid item><Button color="info">Info</Button></Grid>
+      <Grid item><Button color="warning">Warning</Button></Grid>
+      <Grid item><Button color="error">Error</Button></Grid>
+    </Grid>
+    <Grid item wrapper spacing={2}>
+      <Grid item><Button color="default">Default</Button></Grid>
+      <Grid item><Button color="contrast">Contrast</Button></Grid>
+      <Grid item><Button color="grey">Grey</Button></Grid>
+    </Grid>
   </Grid>
 )
 

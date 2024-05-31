@@ -12,11 +12,12 @@ import { CardHeader } from './components/CardHeader'
 import { CardMedia } from './components/CardMedia'
 import { Checkbox } from './components/Checkbox'
 import { Chip } from './components/Chip'
-import { Detail } from './components/Detail'
 import { Divider } from './components/Divider'
 import { FormField } from './components/FormField'
 import { Layer } from './components/Layer'
 import { Link } from './components/Link'
+import { List } from './components/List'
+import { ListItem } from './components/ListItem'
 import { Loader } from './components/Loader'
 import { Modal } from './components/Modal'
 import { ModalActions } from './components/ModalActions'
@@ -61,11 +62,12 @@ export {
   CardMedia,
   Checkbox,
   Chip,
-  Detail,
   Divider,
   FormField,
   Layer,
   Link,
+  List,
+  ListItem,
   Loader,
   Modal,
   ModalActions,
