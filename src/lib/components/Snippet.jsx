@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { nnfxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-import { Text } from './Text'
-
 export const Snippet = ({ content, isDefault, dense, isTransparent, className, ...props }) => {
 
   return (
@@ -17,13 +15,13 @@ export const Snippet = ({ content, isDefault, dense, isTransparent, className, .
           'snippet',
           { ' snippet--transparent': isTransparent },
           { ' snippet--dense': dense },
+          { ' snippet--default': isDefault },
           className
         ])}
         {...props}
       >
         {content}
       </SyntaxHighlighter>
-      {isDefault ? (<Text variant="overline" weight="bold" className={classnames('snippet__default')}>Default</Text>) : null}
     </div>
   )
 }
