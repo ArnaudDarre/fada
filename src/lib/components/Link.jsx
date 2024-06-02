@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import { Text } from './Text'
 
 export const Link = ({
+  icon,
   color,
-  disabled,
   className,
   children,
   ...props
@@ -16,23 +16,27 @@ export const Link = ({
     <Text
       className={classnames([
         'link',
-        {
-          'link--disabled': disabled
-        },
         className
       ])}
       color={color}
-      weight='bold'
       component='a'
       {...props}
     >
       {children}
+      {icon && <span className={'link__icon'}>{icon}</span>}
     </Text>
   )
 }
 
 Link.propTypes = {
+  icon: PropTypes.node,
   color: PropTypes.oneOf([
+    'default',
+    'alt',
+    'disabled',
+    'contrast',
+    'contrastAlt',
+    'contrastDisabled',
     'primary',
     'secondary',
     'highlight',
@@ -41,12 +45,10 @@ Link.propTypes = {
     'warning',
     'error'
   ]),
-  disabled: PropTypes.bool,
   className: PropTypes.node,
   children: PropTypes.string
 }
 
 Link.defaultProps = {
-  disabled: false,
   children: 'Link'
 }

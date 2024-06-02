@@ -25,7 +25,7 @@ export const ListItem = ({ icon, dense, bold, className, children, ...props }) =
 }
 
 ListItem.propTypes = {
-  icon: PropTypes.any,
+  icon: PropTypes.node,
   dense: PropTypes.bool,
   bold: PropTypes.bool,
   className: PropTypes.node,

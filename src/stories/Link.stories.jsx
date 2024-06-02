@@ -1,12 +1,8 @@
 import React from 'react'
+import { ArrowRight } from '@phosphor-icons/react'
 
-import { Card } from '../lib/components/Card'
-import { CardContent } from '../lib/components/CardContent'
-import { CardHeader } from '../lib/components/CardHeader'
 import { Grid } from '../lib/components/Grid'
 import { Link } from '../lib/components/Link'
-import { Snippet } from '../lib/components/Snippet'
-import { Text } from '../lib/components/Text'
 
 export default {
   title: 'Components/Link',
@@ -20,6 +16,7 @@ export default {
     }
   },
   argTypes: {
+    icon: { defaultValue: false },
     disabled: { defaultValue: false },
     className: { control: false }
   }
@@ -33,82 +30,40 @@ Playground.args = {
   children: 'Link'
 }
 
-export const Guide = Template.bind({})
+export const Icon = () => (
+  <Link icon={<ArrowRight />}>Link with icon</Link>
+)
 
-Guide.decorators = [
-  () => {
-    return (
-      <Grid wrapper spacing={6} direction="column">
-        <Grid item>
-          <Card size="sm" noPadding transparent>
-            <CardHeader
-              title={<Text code component="span">color</Text>}
-              subtitle="Overrides the color (default is inherit)."
-            />
-            <CardContent>
-              <Grid wrapper spacing={2}>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='primary'" dense /></Grid>
-                  <Grid item>
-                    <Link color="primary">Primary</Link>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='secondary'" dense /></Grid>
-                  <Grid item>
-                    <Link color="secondary">Secondary</Link>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='highlight'" dense /></Grid>
-                  <Grid item>
-                    <Link color="highlight">Highlight</Link>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='success'" dense /></Grid>
-                  <Grid item>
-                    <Link color="success">Success</Link>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='info'" dense /></Grid>
-                  <Grid item>
-                    <Link color="info">Info</Link>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='warning'" dense /></Grid>
-                  <Grid item>
-                    <Link color="warning">Warning</Link>
-                  </Grid>
-                </Grid>
-                <Grid item wrapper col={3} spacing={1} direction="column">
-                  <Grid item><Snippet content="color='error'" dense /></Grid>
-                  <Grid item>
-                    <Link color="error">Error</Link>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item>
-          <Card size="sm" noPadding transparent>
-            <CardHeader
-              title={<Text code component="span">disabled</Text>}
-            />
-            <CardContent>
-              <Grid wrapper col={3} spacing={1} direction="column">
-                <Grid item><Snippet content="disabled" dense /></Grid>
-                <Grid item>
-                  <Link disabled>Disabled</Link>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-    )
+export const Color = () => (
+  <Grid wrapper spacing={2}>
+    <Grid item wrapper spacing={2}>
+      <Grid item><Link color="default">Default</Link></Grid>
+      <Grid item><Link color="alt">Alt</Link></Grid>
+      <Grid item><Link color="disabled">Disabled</Link></Grid>
+    </Grid>
+    <Grid item wrapper spacing={2}>
+      <Grid item className="fill--white"><Link color="contrast">Contrast</Link></Grid>
+      <Grid item className="fill--white"><Link color="contrastAlt">Contrast alt</Link></Grid>
+      <Grid item className="fill--white"><Link color="contrastDisabled">Contrast disabled</Link></Grid>
+    </Grid>
+    <Grid item wrapper spacing={2}>
+      <Grid item><Link color="primary">Primary</Link></Grid>
+      <Grid item><Link color="secondary">Secondary</Link></Grid>
+      <Grid item><Link color="highlight">Highlight</Link></Grid>
+    </Grid>
+    <Grid item wrapper spacing={2}>
+      <Grid item><Link color="success">Success</Link></Grid>
+      <Grid item><Link color="info">Info</Link></Grid>
+      <Grid item><Link color="warning">Warning</Link></Grid>
+      <Grid item><Link color="error">Error</Link></Grid>
+    </Grid>
+  </Grid>
+)
+
+Color.parameters = {
+  docs: {
+    description: {
+      story: 'Overrides the link color, which by default inherits the parent container color.'
+    }
   }
-]
+}
