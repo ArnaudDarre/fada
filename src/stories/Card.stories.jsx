@@ -38,7 +38,6 @@ Playground.args = {
   children: (
     <>
       <CardMedia
-        height={300}
         image='https://upload.wikimedia.org/wikipedia/commons/9/9a/Chanterelle_Cantharellus_cibarius.jpg'
       />
       <CardHeader

@@ -2,7 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { Layer } from './Layer'
 import { Text } from './Text'
 
 export const Tag = ({
@@ -14,25 +13,19 @@ export const Tag = ({
 }) => {
 
   return (
-    <Layer
+    <Text
       className={classnames([
         'tag',
         {
+          [`tag--${color}`]: color,
           'tag--dense': dense
         },
         className
       ])}
-      fill={color}
+      {...props}
     >
-      <Text
-        className={classnames('tag__text')}
-        variant={dense === true ? 'overline' : 'caption'}
-        weight='regular'
-        {...props}
-      >
-        {children}
-      </Text>
-    </Layer>
+      {children}
+    </Text>
   )
 }
 
@@ -41,6 +34,7 @@ Tag.propTypes = {
     'primary',
     'secondary',
     'highlight',
+    'grey',
     'success',
     'info',
     'warning',
@@ -53,6 +47,5 @@ Tag.propTypes = {
 
 Tag.defaultProps = {
   color: 'primary',
-  dense: false,
   children: 'Tag'
 }

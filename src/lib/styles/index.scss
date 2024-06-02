@@ -37,25 +37,6 @@ $icons-path: '~/public/icons/';
 // @import './components/tag';
 // @import './components/tooltip';
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
-
-code {
-  font-family: "Roboto Mono", Courier, monospace;
-  // font-weight: $font-regular;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 // remove after finalised
 
 .snippet__wrapper {
