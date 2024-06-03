@@ -2,13 +2,13 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { Layer } from './Layer'
 import { SectionHeader } from './SectionHeader'
 
 export const Section = ({
-  fill,
   align,
-  fullWidth,
+  color,
+  landing,
+  header,
   label,
   title,
   subtitle,
@@ -17,27 +17,20 @@ export const Section = ({
   ...props
 }) => {
   return (
-    <Layer
+    <div
       className={classnames([
         'section',
         {
-          'section--fill': fill,
-          'section--fullWidth': fullWidth
+          [`section--${align}`]: align,
+          [`section--${color}`]: color,
+          'section--landing': landing,
+          'section--header': header
         },
         className
       ])}
-      fill={fill}
       {...props}
     >
-      <div
-        className={classnames(
-          'section__container',
-          {
-            [`section--${align}`]: align,
-            'section--fullWidth': fullWidth
-          }
-        )}
-      >
+      <div className={'section__container'}>
         {label || title || subtitle ? (
           <SectionHeader
             label={label}
@@ -45,33 +38,26 @@ export const Section = ({
             subtitle={subtitle}
           />
         ) : null }
-        {children ? (
-          <div className={classnames('section__content')}>
-            {children}
-          </div>
-        ) : null}
+        {children}
       </div>
-    </Layer>
+    </div>
   )
 }
 
 Section.propTypes = {
-  fill: PropTypes.oneOf([
-    'black',
-    'white',
-    'background',
-    'paper',
-    'overlay',
-    'primary',
-    'secondary',
-    'highlight'
-  ]),
   align: PropTypes.oneOf([
     'left',
     'center',
     'right'
   ]),
-  fullWidth: PropTypes.bool,
+  color: PropTypes.oneOf([
+    'default',
+    'paper',
+    'primary',
+    'primaryLight'
+  ]),
+  landing: PropTypes.bool,
+  header: PropTypes.bool,
   label: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,

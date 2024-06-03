@@ -8,7 +8,7 @@ export const SectionHeader = ({
   label,
   title,
   subtitle,
-  subheader,
+  dense,
   className,
   ...props
 }) => {
@@ -17,15 +17,15 @@ export const SectionHeader = ({
       className={classnames([
         'section__header',
         {
-          'section__header--subheader': subheader
+          'section__header--dense': dense
         },
         className
       ])}
       {...props}
     >
-      {label ? <Text variant={subheader ? 'overline' : 'caption'} weight='bold' className={classnames('section__label')}>{label}</Text> : null }
-      {title ? <Text variant={subheader ? 'h6' : 'h3'} color='primary' className={classnames('section__title')}>{title}</Text> : null }
-      {subtitle ? <Text variant={subheader ? 'body' : 'subtitle'} className={classnames('section__subtitle')}>{subtitle}</Text> : null }
+      {label ? <Text className={classnames('section__label')}>{label}</Text> : null }
+      {title ? <Text className={classnames('section__title')}>{title}</Text> : null }
+      {subtitle ? <Text className={classnames('section__subtitle')}>{subtitle}</Text> : null }
     </div>
   )
 }
@@ -34,10 +34,6 @@ SectionHeader.propTypes = {
   label: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  subheader: PropTypes.bool,
+  dense: PropTypes.bool,
   className: PropTypes.bool
-}
-
-SectionHeader.defaultProps = {
-  subheader: false
 }
