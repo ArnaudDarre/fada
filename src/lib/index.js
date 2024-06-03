@@ -23,6 +23,7 @@ import { Modal } from './components/Modal'
 import { ModalActions } from './components/ModalActions'
 import { ModalContent } from './components/ModalContent'
 import { ModalHeader } from './components/ModalHeader'
+import { Nav } from './components/Nav'
 import { NavBar } from './components/NavBar'
 import { NavGroup } from './components/NavGroup'
 import { NavItem } from './components/NavItem'
@@ -74,6 +75,7 @@ export {
   ModalActions,
   ModalContent,
   ModalHeader,
+  Nav,
   NavBar,
   NavGroup,
   NavItem,

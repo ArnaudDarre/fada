@@ -8,7 +8,6 @@ import { NavGroup } from './NavGroup'
 export const NavItem = ({
   label,
   active,
-  disabled,
   dropdown,
   icon,
   end,
@@ -23,7 +22,7 @@ export const NavItem = ({
 
   let Component
 
-  if (dropdown || disabled) {
+  if (dropdown ) {
     Component = 'button'
   } else {
     Component = Link
@@ -35,9 +34,7 @@ export const NavItem = ({
         'nav__item',
         {
           'nav__item--dropdown': dropdown,
-          'js-show': isActive,
-          'navItem--active': active,
-          'navItem--disabled': disabled
+          'js-show': isActive
         },
         className
       ])}
@@ -46,10 +43,15 @@ export const NavItem = ({
       <Component
         end={end}
         to={to}
-        className={'nav__trigger'}
+        className={classnames([
+          'nav__trigger',
+          {
+            'nav__trigger--active': active
+          }
+        ])}
         onClick={onClick}
       >
-        {icon ? (<span className={classnames('navItem__icon')}>{icon}</span>) : null}
+        {icon ? (<span className={classnames('nav__icon')}>{icon}</span>) : null}
         <span>{label}</span>
       </Component>
       {dropdown ? (
@@ -70,7 +72,6 @@ export const NavItem = ({
 NavItem.propTypes = {
   label: PropTypes.string,
   active: PropTypes.bool,
-  disabled: PropTypes.bool,
   dropdown: PropTypes.object,
   icon: PropTypes.node,
   end: PropTypes.node,
@@ -79,6 +80,5 @@ NavItem.propTypes = {
 }
 
 NavItem.defaultProps = {
-  label: 'Nav item',
-  dense: 'md'
+  label: 'Nav item'
 }
