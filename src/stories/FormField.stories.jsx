@@ -8,7 +8,6 @@ import { Checkbox } from '../lib/components/Checkbox'
 import { FormField } from '../lib/components/FormField'
 import { Grid } from '../lib/components/Grid'
 import { Radio } from '../lib/components/Radio'
-import { SelectOption } from '../lib/components/SelectOption'
 import { Snippet } from '../lib/components/Snippet'
 import { Switch } from '../lib/components/Switch'
 import { Text } from '../lib/components/Text'
@@ -78,8 +77,8 @@ Guide.decorators = [
                   <Grid item><Snippet content="kind='select'" dense /></Grid>
                   <Grid item>
                     <FormField kind="select" id="select" label="Select">
-                      <SelectOption value="1" >Option 1</SelectOption>
-                      <SelectOption value="2" >Option 2</SelectOption>
+                      <option value="1" >Option 1</option>
+                      <option value="2" >Option 2</option>
                     </FormField>
                   </Grid>
                 </Grid>
