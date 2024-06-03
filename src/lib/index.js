@@ -33,6 +33,7 @@ import { Section } from './components/Section'
 import { SectionHeader } from './components/SectionHeader'
 import { SelectOption } from './components/SelectOption'
 import { Snippet } from './components/Snippet'
+import { Status } from './components/Status'
 import { Switch } from './components/Switch'
 import { Table } from './components/Table'
 import { TableBody } from './components/TableBody'
@@ -83,6 +84,7 @@ export {
   SectionHeader,
   SelectOption,
   Snippet,
+  Status,
   Switch,
   Table,
   TableBody,
