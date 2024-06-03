@@ -1,8 +1,7 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 
-import { Button } from '../lib/components/Button'
-import { Buttons } from '../lib/components/Buttons'
+import { Grid } from '../lib/components/Grid'
 import { NavBar } from '../lib/components/NavBar'
 import { NavGroup } from '../lib/components/NavGroup'
 import { NavItem } from '../lib/components/NavItem'
@@ -38,7 +37,7 @@ export const Playground = Template.bind({})
 Playground.args = {
   children: (
     <>
-      <NavGroup transparent direction='landscape'>
+      <NavGroup direction='landscape'>
         <NavItem label='Home' />
         <NavItem
           label='Services'
@@ -52,10 +51,28 @@ Playground.args = {
         />
         <NavItem label='Contact' />
       </NavGroup>
-      <Buttons>
-        <Button size='sm'>Log in</Button>
-        <Button size='sm' color='secondary'>Sign up</Button>
-      </Buttons>
     </>
   )
 }
+
+export const Align = () => (
+  <Grid wrapper spacing={2} direction="column">
+    <Grid item>
+      <NavBar>
+        <NavGroup>
+          <NavItem label='Align' />
+          <NavItem label='Left' />
+        </NavGroup>
+      </NavBar>
+    </Grid>
+    <Grid item>
+      <NavBar align="right">
+        <NavGroup>
+          <NavItem label='Align' />
+          <NavItem label='Right' />
+        </NavGroup>
+      </NavBar>
+    </Grid>
+  </Grid>
+)
+

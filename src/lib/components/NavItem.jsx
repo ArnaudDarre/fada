@@ -1,14 +1,12 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { CaretDown } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 
-import { NavGroup, SizeContext } from './NavGroup'
+import { NavGroup } from './NavGroup'
 
 export const NavItem = ({
   label,
-  size,
   active,
   disabled,
   dropdown,
@@ -19,10 +17,6 @@ export const NavItem = ({
   ...props
 }) => {
 
-  const useSize = () => useContext(SizeContext)
-  const sizeParent = useSize()
-  const sizeProp = sizeParent ? sizeParent : size
-
   const dropdownRef = useRef(null)
   const [isActive, setIsActive] = useState(false)
   const onClick = () => setIsActive(!isActive)
@@ -30,17 +24,18 @@ export const NavItem = ({
   let Component
 
   if (dropdown || disabled) {
-    Component = 'p'
+    Component = 'button'
   } else {
     Component = Link
   }
 
   return (
-    <div
+    <li
       className={classnames([
-        'navItem',
+        'nav__item',
         {
-          [`navItem--${sizeProp}`]: sizeProp,
+          'nav__item--dropdown': dropdown,
+          'js-show': isActive,
           'navItem--active': active,
           'navItem--disabled': disabled
         },
@@ -51,40 +46,29 @@ export const NavItem = ({
       <Component
         end={end}
         to={to}
-        className={classnames([
-          'navItem__trigger'
-        ])}
+        className={'nav__trigger'}
         onClick={onClick}
       >
         {icon ? (<span className={classnames('navItem__icon')}>{icon}</span>) : null}
         <span>{label}</span>
-        {dropdown ? (<span className={classnames('navItem__icon')}><CaretDown /></span>) : null}
       </Component>
       {dropdown ? (
         <NavGroup
           ref={dropdownRef}
           className={classnames([
-            'navItem__dropdown',
-            'zi-1',
-            {
-              'navItem__dropdown--active': isActive
-            }
+            'nav__target',
+            'zi-1'
           ])}
         >
           {dropdown}
         </NavGroup>
       ) : null }
-    </div>
+    </li>
   )
 }
 
 NavItem.propTypes = {
   label: PropTypes.string,
-  size: PropTypes.oneOf([
-    'sm',
-    'md',
-    'lg'
-  ]),
   active: PropTypes.bool,
   disabled: PropTypes.bool,
   dropdown: PropTypes.object,
@@ -96,5 +80,5 @@ NavItem.propTypes = {
 
 NavItem.defaultProps = {
   label: 'Nav item',
-  size: 'md'
+  dense: 'md'
 }
