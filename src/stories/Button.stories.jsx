@@ -20,27 +20,16 @@ export default {
     }
   },
   argTypes: {
-    color: { defaultValue: 'primary' },
-    size: { defaultValue: 'md' },
-    kind: { defaultValue: 'text' },
-    variant: { defaultValue: 'fill' },
-    component: { defaultValue: 'button' },
-    fullWidth: { defaultValue: false },
-    disabled: { defaultValue: false },
     iconLeft: { control: false },
     iconRight: { control: false },
-    isTransparent: { defaultValue: false },
-    className: { control: false }
+    className: { control: false },
+    children: { control: false }
   }
 }
 
 const Template = (args) => <Button {...args} />
 
 export const Playground = Template.bind({})
-
-Playground.args = {
-  children: 'Button'
-}
 
 export const Kind = () => (
   <Grid wrapper spacing={2}>
@@ -123,7 +112,6 @@ export const Icons = () => (
   <Grid wrapper spacing={2}>
     <Grid item><Button iconLeft={<Sun />}>Icon left</Button></Grid>
     <Grid item><Button iconRight={<Moon />}>Icon right</Button></Grid>
-    <Grid item><Button iconLeft={<Sun />} iconRight={<Moon />}>Icon left and right</Button></Grid>
   </Grid>
 )
 

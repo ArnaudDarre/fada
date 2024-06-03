@@ -22,7 +22,7 @@ export const Radio = ({
       ])}
     >
       <input
-        className={classnames('radio__input')}
+        className={classnames('radio__control')}
         type="radio"
         id={id}
         name={name}
