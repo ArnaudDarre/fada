@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { CaretDown } from '@phosphor-icons/react'
 
 import { Text } from './Text'
 
@@ -12,11 +11,11 @@ export const FormField = ({
   placeholder,
   label,
   notice,
-  customIcon,
+  icon,
   direction,
-  disabled,
   error,
-  dense,
+  disabled,
+  required,
   onFocus,
   onBlur,
   children,
@@ -26,7 +25,7 @@ export const FormField = ({
 
   const [isFocused, setFocused] = useState(false)
 
-  const multiChild = kind === 'radio' || kind === 'checkbox' || kind === 'switch'
+  const multiChild = kind === 'radio' || kind === 'checkbox'
 
   let fieldElement
 
@@ -34,7 +33,7 @@ export const FormField = ({
     fieldElement = (
       <>
         <select
-          className={classnames('field__fieldInput')}
+          className={classnames('input__control')}
           name={id}
           id={id}
           placeholder={placeholder}
@@ -47,14 +46,22 @@ export const FormField = ({
     )
   } else if (multiChild) {
     fieldElement = (
-      <>
+      <div
+        className={classnames([
+          'input__control',
+          'radios',
+          {
+            [`radios--${direction}`]: direction
+          }
+        ])}
+      >
         {children}
-      </>
+      </div>
     )
   } else if (kind === 'text') {
     fieldElement = (
       <input
-        className={classnames('field__fieldInput')}
+        className={classnames('input__control')}
         name={id}
         id={id}
         placeholder={placeholder}
@@ -65,7 +72,7 @@ export const FormField = ({
   } else if (kind === 'textarea') {
     fieldElement = (
       <textarea
-        className={classnames('field__fieldInput')}
+        className={classnames('input__control')}
         name={id}
         id={id}
         placeholder={placeholder}
@@ -76,22 +83,16 @@ export const FormField = ({
     )
   }
 
-  let icon
-
-  if (kind === 'select') {
-    icon = <CaretDown />
-  } else {
-    icon = customIcon
-  }
-
   return (
-    <fieldset
+    <div
       className={classnames([
-        'field',
+        'input',
         {
-          'field--active': isFocused,
-          'field--disabled': disabled,
-          'field--error': error
+          'input--focused': isFocused,
+          [`${kind}`]: kind,
+          'js--error': error,
+          'input--disabled': disabled,
+          'input--required': required
         },
         className
       ])}
@@ -107,9 +108,7 @@ export const FormField = ({
     >
       {label ? (
         <Text
-          className={classnames('field__label')}
-          variant={dense ? 'overline' : 'caption'}
-          weight='bold'
+          className={classnames('input__label')}
           component={multiChild ? 'legend' : 'label'}
           htmlFor={id}
         >
@@ -118,28 +117,27 @@ export const FormField = ({
       ) : null}
       <div
         className={classnames([
-          'field__field',
+          'input__field',
           {
-            [`field--${kind}`]: kind,
-            [`field--${direction}`]: direction,
-            'field--dense': dense
+            [`input--${kind}`]: kind,
+            [`input--${direction}`]: direction
           }
         ])}>
         {icon ? (
-          <div className={classnames('field__icon')}>{icon}</div>
+          <div className={classnames('input__icon')}>{icon}</div>
         ) : null }
         {fieldElement}
       </div>
       {notice ? (
         <Text
-          className={classnames('field__notice')}
+          className={classnames('input__notice')}
           variant="caption"
           weight="regular"
         >
           {notice}
         </Text>
       ) : null}
-    </fieldset>
+    </div>
   )
 }
 
@@ -150,21 +148,20 @@ FormField.propTypes = {
     'select',
     'textarea',
     'radio',
-    'checkbox',
-    'switch'
+    'checkbox'
   ]),
   id: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string,
   notice: PropTypes.string,
-  customIcon: PropTypes.node,
+  icon: PropTypes.node,
   direction: PropTypes.oneOf([
     'portrait',
     'landscape'
   ]),
-  disabled: PropTypes.bool,
   error: PropTypes.bool,
-  dense: PropTypes.bool,
+  disabled: PropTypes.bool,
+  required: PropTypes.bool,
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   children: PropTypes.any,
