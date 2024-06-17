@@ -11,9 +11,10 @@ import { CardContent } from './components/CardContent'
 import { CardHeader } from './components/CardHeader'
 import { CardMedia } from './components/CardMedia'
 import { Checkbox } from './components/Checkbox'
+import { Checkboxes } from './components/Checkboxes'
 import { Chip } from './components/Chip'
 import { Divider } from './components/Divider'
-import { FormField } from './components/FormField'
+import { Input } from './components/Input'
 import { Layer } from './components/Layer'
 import { Link } from './components/Link'
 import { List } from './components/List'
@@ -30,9 +31,10 @@ import { NavItem } from './components/NavItem'
 import { Page } from './components/Page'
 import { PageHeader } from './components/PageHeader'
 import { Radio } from './components/Radio'
+import { RadioButtons } from './components/RadioButtons'
 import { Section } from './components/Section'
 import { SectionHeader } from './components/SectionHeader'
-import { SelectOption } from './components/SelectOption'
+import { Select } from './components/Select'
 import { Snippet } from './components/Snippet'
 import { Status } from './components/Status'
 import { Switch } from './components/Switch'
@@ -47,6 +49,7 @@ import { TabsContent } from './components/TabsContent'
 import { TabsControl } from './components/TabsControl'
 import { Tag } from './components/Tag'
 import { Text } from './components/Text'
+import { Textarea } from './components/Textarea'
 import { Tooltip } from './components/Tooltip'
 
 export {
@@ -63,9 +66,10 @@ export {
   CardHeader,
   CardMedia,
   Checkbox,
+  Checkboxes,
   Chip,
   Divider,
-  FormField,
+  Input,
   Layer,
   Link,
   List,
@@ -82,9 +86,10 @@ export {
   Page,
   PageHeader,
   Radio,
+  RadioButtons,
   Section,
   SectionHeader,
-  SelectOption,
+  Select,
   Snippet,
   Status,
   Switch,
@@ -99,5 +104,6 @@ export {
   TabsControl,
   Tag,
   Text,
+  Textarea,
   Tooltip
 }

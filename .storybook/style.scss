@@ -13,6 +13,15 @@
   box-sizing: border-box;
 }
 
+// reset checkbox and radio styles on props table
+.docblock-argstable {
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    all: revert;
+  }
+}
+
 // —————————————————————————————————————————————————————————————————
 // markdown
 // —————————————————————————————————————————————————————————————————

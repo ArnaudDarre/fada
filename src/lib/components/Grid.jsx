@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 export const Grid = ({
   wrapper,
   item,
+  wrap,
   direction,
   justifyContent,
   alignItems,
@@ -26,6 +27,7 @@ export const Grid = ({
         {
           'grid': wrapper,
           'grid__item': item,
+          'grid--wrap': wrap,
           [`grid--${direction}`]: direction,
           [`grid--jc-${justifyContent}`]: justifyContent,
           [`grid--ai-${alignItems}`]: alignItems,
@@ -50,6 +52,7 @@ export const Grid = ({
 Grid.propTypes = {
   wrapper: PropTypes.bool,
   item: PropTypes.bool,
+  wrap: PropTypes.bool,
   direction: PropTypes.oneOf([
     'column',
     'columnReverse',

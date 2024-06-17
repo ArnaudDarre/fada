@@ -52,25 +52,35 @@ const exampleText = (
   </>
 )
 
+export const Wrap = () => (
+  <Grid wrapper spacing={2} wrap>{exampleSnippet}</Grid>
+)
+
+Wrap.parameters = {
+  docs: {
+    description: {
+      story: 'Make all child elements automatically the same width.'
+    }
+  }
+}
+
 export const Direction = () => (
   <Grid wrapper spacing={2}>
-    <Grid wrapper spacing={2}>
-      <Grid item wrapper sm={3} spacing={1} direction="column">
-        <Grid item><Snippet content="direction='column'" dense /></Grid>
-        <Grid item wrapper spacing={1} direction="column">{exampleSnippet}</Grid>
-      </Grid>
-      <Grid item wrapper sm={3} spacing={1} direction="column">
-        <Grid item><Snippet content="direction='columnReverse'" dense /></Grid>
-        <Grid item wrapper spacing={1} direction="columnReverse">{exampleSnippet}</Grid>
-      </Grid>
-      <Grid item wrapper sm={3} spacing={1} direction="column">
-        <Grid item><Snippet content="direction='row'" isDefault dense /></Grid>
-        <Grid item wrapper spacing={1} direction="row">{exampleSnippet}</Grid>
-      </Grid>
-      <Grid item wrapper sm={3} spacing={1} direction="column">
-        <Grid item><Snippet content="direction='rowReverse'" dense /></Grid>
-        <Grid item wrapper spacing={1} direction="rowReverse">{exampleSnippet}</Grid>
-      </Grid>
+    <Grid item wrapper sm={3} spacing={1} direction="column">
+      <Grid item><Snippet content="direction='column'" dense /></Grid>
+      <Grid item wrapper spacing={1} direction="column">{exampleSnippet}</Grid>
+    </Grid>
+    <Grid item wrapper sm={3} spacing={1} direction="column">
+      <Grid item><Snippet content="direction='columnReverse'" dense /></Grid>
+      <Grid item wrapper spacing={1} direction="columnReverse">{exampleSnippet}</Grid>
+    </Grid>
+    <Grid item wrapper sm={3} spacing={1} direction="column">
+      <Grid item><Snippet content="direction='row'" isDefault dense /></Grid>
+      <Grid item wrapper spacing={1} direction="row">{exampleSnippet}</Grid>
+    </Grid>
+    <Grid item wrapper sm={3} spacing={1} direction="column">
+      <Grid item><Snippet content="direction='rowReverse'" dense /></Grid>
+      <Grid item wrapper spacing={1} direction="rowReverse">{exampleSnippet}</Grid>
     </Grid>
   </Grid>
 )

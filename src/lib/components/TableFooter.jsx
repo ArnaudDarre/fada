@@ -3,8 +3,7 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import { CaretLeft, CaretRight, CaretDoubleLeft, CaretDoubleRight } from '@phosphor-icons/react'
 
-import { FormField } from './FormField'
-import { SelectOption } from './SelectOption'
+import { Select } from './Select'
 import { Text } from './Text'
 
 export const TableFooter = ({
@@ -25,13 +24,13 @@ export const TableFooter = ({
       {...props}
     >
       <div className={classnames('tableFooter__rows')}>
-        <FormField dense kind="select" id="rows">
-          <SelectOption value="1" >10</SelectOption>
-          <SelectOption value="2" >25</SelectOption>
-          <SelectOption value="2" >50</SelectOption>
-          <SelectOption value="2" >100</SelectOption>
-          <SelectOption value="2" >All</SelectOption>
-        </FormField>
+        <Select dense id="rows">
+          <option value="1" >10</option>
+          <option value="2" >25</option>
+          <option value="2" >50</option>
+          <option value="2" >100</option>
+          <option value="2" >All</option>
+        </Select>
       </div>
       <div className={classnames('tableFooter__pages')}>
         <span className={classnames('tableFooter__button tableFooter__first')}><CaretDoubleLeft size={16} /></span>
