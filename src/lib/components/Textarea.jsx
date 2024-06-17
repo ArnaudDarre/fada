@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { Text } from './Text'
-
 export const Textarea = ({
   onChange,
   id,
@@ -43,17 +41,10 @@ export const Textarea = ({
         onBlur && onBlur(event)
       }}
     >
-      {label ? (
-        <Text
-          className={classnames('input__label')}
-          component='label'
-          htmlFor={id}
-        >
-          {label}
-        </Text>
-      ) : null}
+      {label && <label className={'input__label'} htmlFor={id}>{label}</label>}
+      {notice && <p className={'input__notice'}>{notice}</p>}
       <textarea
-        className={classnames('input__control')}
+        className={'input__control'}
         name={id}
         id={id}
         placeholder={placeholder}
@@ -61,15 +52,6 @@ export const Textarea = ({
         rows={4}
         {...props}
       ></textarea>
-      {notice ? (
-        <Text
-          className={classnames('input__notice')}
-          variant="caption"
-          weight="regular"
-        >
-          {notice}
-        </Text>
-      ) : null}
     </div>
   )
 }

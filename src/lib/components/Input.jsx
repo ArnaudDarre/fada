@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-
-import { Text } from './Text'
+import { CalendarBlank, CaretUpDown, Clock } from '@phosphor-icons/react'
 
 export const Input = ({
   onChange,
@@ -22,6 +21,18 @@ export const Input = ({
 }) => {
 
   const [isFocused, setFocused] = useState(false)
+
+  let customIcon
+
+  if (type === 'date') {
+    customIcon = <CalendarBlank />
+  } else if (type === 'time') {
+    customIcon = <Clock />
+  } else if (type === 'number') {
+    customIcon = <CaretUpDown />
+  } else {
+    customIcon = icon
+  }
 
   return (
     <div
@@ -45,36 +56,18 @@ export const Input = ({
         onBlur && onBlur(event)
       }}
     >
-      {label ? (
-        <Text
-          className={classnames('input__label')}
-          component='label'
-          htmlFor={id}
-        >
-          {label}
-        </Text>
-      ) : null}
-      {icon ? (
-        <div className={classnames('input__icon')}>{icon}</div>
-      ) : null }
+      {label && <label className={'input__label'} htmlFor={id}>{label}</label>}
+      {notice && <p className={'input__notice'}>{notice}</p>}
+      {customIcon && <div className={'input__icon'}>{customIcon}</div>}
       <input
         type={type}
-        className={classnames('input__control')}
+        className={'input__control'}
         name={id}
         id={id}
         placeholder={placeholder}
         disabled={disabled}
         {...props}
       />
-      {notice ? (
-        <Text
-          className={classnames('input__notice')}
-          variant="caption"
-          weight="regular"
-        >
-          {notice}
-        </Text>
-      ) : null}
     </div>
   )
 }

@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { Text } from './Text'
-
 export const Checkboxes = ({
   onChange,
   id,
@@ -43,15 +41,8 @@ export const Checkboxes = ({
         onBlur && onBlur(event)
       }}
     >
-      {label ? (
-        <Text
-          className={classnames('input__label')}
-          component='label'
-          htmlFor={id}
-        >
-          {label}
-        </Text>
-      ) : null}
+      {label && <label className={'input__label'} htmlFor={id}>{label}</label>}
+      {notice && <p className={'input__notice'}>{notice}</p>}
       <div
         className={classnames([
           'input__control',
@@ -63,15 +54,6 @@ export const Checkboxes = ({
       >
         {children}
       </div>
-      {notice ? (
-        <Text
-          className={classnames('input__notice')}
-          variant="caption"
-          weight="regular"
-        >
-          {notice}
-        </Text>
-      ) : null}
     </div>
   )
 }
