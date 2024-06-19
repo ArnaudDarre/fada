@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-import { CalendarBlank, CaretUpDown, Clock } from '@phosphor-icons/react'
+import {
+  CalendarBlank,
+  CaretUpDown,
+  Clock,
+  EnvelopeSimple,
+  Phone
+} from '@phosphor-icons/react'
 
 export const Input = ({
   onChange,
@@ -26,10 +32,14 @@ export const Input = ({
 
   if (type === 'date') {
     customIcon = <CalendarBlank />
-  } else if (type === 'time') {
-    customIcon = <Clock />
+  } else if (type === 'email') {
+    customIcon = <EnvelopeSimple />
   } else if (type === 'number') {
     customIcon = <CaretUpDown />
+  } else if (type === 'tel') {
+    customIcon = <Phone />
+  } else if (type === 'time') {
+    customIcon = <Clock />
   } else {
     customIcon = icon
   }
@@ -75,10 +85,11 @@ export const Input = ({
 Input.propTypes = {
   onChange: PropTypes.func,
   type: PropTypes.oneOf([
-    'text',
-    'number',
-    'email',
     'date',
+    'email',
+    'number',
+    'tel',
+    'text',
     'time'
   ]),
   id: PropTypes.string,

@@ -30,12 +30,13 @@ const Template = (args) => <Input {...args} />
 export const Playground = Template.bind({})
 
 export const Type = () => (
-  <Grid wrapper spacing={2} wrap>
-    <Grid item><Input type="text" id="text" label="Text" /></Grid>
-    <Grid item><Input type="number" id="number" label="Number" /></Grid>
-    <Grid item><Input type="email" id="email" label="Email" /></Grid>
-    <Grid item><Input type="date" id="date" label="Date" /></Grid>
-    <Grid item><Input type="time" id="time" label="Time" /></Grid>
+  <Grid wrapper spacing={2}>
+    <Grid item md={4}><Input type="date" id="date" label="Date" /></Grid>
+    <Grid item md={4}><Input type="email" id="email" label="Email" /></Grid>
+    <Grid item md={4}><Input type="number" id="number" label="Number" /></Grid>
+    <Grid item md={4}><Input type="tel" id="tel" label="Telephone" /></Grid>
+    <Grid item md={4}><Input type="text" id="text" label="Text" /></Grid>
+    <Grid item md={4}><Input type="time" id="time" label="Time" /></Grid>
   </Grid>
 )
 
