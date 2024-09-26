@@ -34,7 +34,7 @@ PageHeader.propTypes = {
   align: PropTypes.oneOf([
     'left',
     'center',
-    'right'  
+    'right'
   ]),
   label: PropTypes.string,
   title: PropTypes.string,
