@@ -4,8 +4,6 @@ import { Button } from '../lib/components/Button'
 import { Buttons } from '../lib/components/Buttons'
 import { Grid } from '../lib/components/Grid'
 
-import { Size } from '../lib/types'
-
 export default {
   title: 'Components/Buttons',
   component: Buttons,
@@ -19,11 +17,7 @@ export default {
   },
   argTypes: {
     direction: { defaultValue: 'landscape' },
-    spacing: {
-      defaultValue: 'md',
-      options: Size,
-      table: { type: { summary: Size } }
-    },
+    spacing: { defaultValue: 'md' },
     className: { control: false },
     children: { control: false }
   }

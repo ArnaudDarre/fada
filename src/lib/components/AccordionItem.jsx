@@ -90,7 +90,6 @@ AccordionItem.propTypes = {
 }
 
 AccordionItem.defaultProps = {
-  textVariant: 'body',
   label: 'Accordion control',
   children: 'Accordion content'
 }

@@ -5,8 +5,6 @@ import { CardHeader } from '../lib/components/CardHeader'
 import { CardMedia } from '../lib/components/CardMedia'
 import { Grid } from '../lib/components/Grid'
 
-import { SizeFull } from '../lib/types'
-
 export default {
   title: 'Components/CardMedia',
   component: CardMedia,
@@ -20,9 +18,7 @@ export default {
   },
   argTypes: {
     borderRadius: {
-      defaultValue: 'md',
-      options: SizeFull,
-      table: { type: { summary: SizeFull } }
+      defaultValue: 'md'
     },
     fullWidth: { defaultValue: false },
     className: { control: false }

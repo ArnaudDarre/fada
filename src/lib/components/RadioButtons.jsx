@@ -63,7 +63,6 @@ RadioButtons.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   notice: PropTypes.string,
-  icon: PropTypes.node,
   error: PropTypes.bool,
   disabled: PropTypes.bool,
   required: PropTypes.bool,

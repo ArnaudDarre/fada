@@ -4,9 +4,7 @@ import PropTypes from 'prop-types'
 import {
   CalendarBlank,
   CaretUpDown,
-  Clock,
-  EnvelopeSimple,
-  Phone
+  Clock
 } from '@phosphor-icons/react'
 
 export const Input = ({
@@ -32,14 +30,10 @@ export const Input = ({
 
   if (type === 'date') {
     customIcon = <CalendarBlank />
-  } else if (type === 'email') {
-    customIcon = <EnvelopeSimple />
-  } else if (type === 'number') {
-    customIcon = <CaretUpDown />
-  } else if (type === 'tel') {
-    customIcon = <Phone />
   } else if (type === 'time') {
     customIcon = <Clock />
+  } else if (type === 'number') {
+    customIcon = <CaretUpDown />
   } else {
     customIcon = icon
   }

@@ -5,8 +5,6 @@ import PropTypes from 'prop-types'
 import { Section } from './Section'
 import { Text } from './Text'
 
-import { Align } from '../types'
-
 export const PageHeader = ({
   align,
   label,
@@ -33,7 +31,11 @@ export const PageHeader = ({
 }
 
 PageHeader.propTypes = {
-  align: PropTypes.oneOf(Align),
+  align: PropTypes.oneOf([
+    'left',
+    'center',
+    'right'  
+  ]),
   label: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,

@@ -2,8 +2,6 @@ import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { SizeFull } from '../types'
-
 export const CardMedia = ({ width, height, borderRadius, image, fullWidth, className, ...props }) => {
 
   return (
@@ -33,7 +31,13 @@ export const CardMedia = ({ width, height, borderRadius, image, fullWidth, class
 CardMedia.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
-  borderRadius: PropTypes.oneOf(SizeFull),
+  borderRadius: PropTypes.oneOf([
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl'
+  ]),
   image: PropTypes.string,
   fullWidth: PropTypes.bool,
   className: PropTypes.node
