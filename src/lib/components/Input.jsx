@@ -47,7 +47,7 @@ export const Input = ({
           'js--error': error,
           'input--disabled': disabled,
           'input--required': required,
-          'input--withIcon': customIcon
+          'input--withIcon': icon
         },
         className
       ])}
