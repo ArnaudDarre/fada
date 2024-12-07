@@ -28,14 +28,14 @@ export const Input = ({
 
   let customIcon
 
-  if (type === 'date') {
+  if (icon) {
+    customIcon = icon
+  } else if (type === 'date') {
     customIcon = <CalendarBlank />
   } else if (type === 'time') {
     customIcon = <Clock />
   } else if (type === 'number') {
     customIcon = <CaretUpDown />
-  } else {
-    customIcon = icon
   }
 
   return (

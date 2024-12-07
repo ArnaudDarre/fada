@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Grid } from './lib/components/Grid'
-import { Text } from './lib/components/Text'
+import Text from './lib/components/Text'
 
 import './lib/styles/index.scss'
 
