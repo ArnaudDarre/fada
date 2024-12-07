@@ -46,7 +46,8 @@ export const Input = ({
           'input--focused': isFocused,
           'js--error': error,
           'input--disabled': disabled,
-          'input--required': required
+          'input--required': required,
+          'input--withIcon': customIcon
         },
         className
       ])}
