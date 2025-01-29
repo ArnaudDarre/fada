@@ -29,7 +29,7 @@ When working on both Pallote projects at the same time, you can link them locall
 npm link
 ```
 
-- In the `pallote-react`window, link the package locally
+- In the `pallote-react` window, link the package locally
 
 ```shell
 npm link pallote-css

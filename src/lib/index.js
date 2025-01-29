@@ -13,6 +13,7 @@ import { CardMedia } from './components/CardMedia'
 import { Checkbox } from './components/Checkbox'
 import { Checkboxes } from './components/Checkboxes'
 import { Chip } from './components/Chip'
+import { Display } from './components/Display'
 import { Divider } from './components/Divider'
 import { Input } from './components/Input'
 import { Layer } from './components/Layer'
@@ -68,6 +69,7 @@ export {
   Checkbox,
   Checkboxes,
   Chip,
+  Display,
   Divider,
   Input,
   Layer,

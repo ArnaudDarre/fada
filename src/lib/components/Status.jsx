@@ -44,5 +44,5 @@ Status.propTypes = {
 
 Status.defaultProps = {
   color: 'inactive',
-  children: 'Status p'
+  children: 'Status'
 }
